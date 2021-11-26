@@ -1,7 +1,7 @@
 ﻿
 namespace Proyecto_Final.Views
 {
-    partial class Menu
+    partial class MenuView
     {
         /// <summary>
         /// Required designer variable.
@@ -32,12 +32,12 @@ namespace Proyecto_Final.Views
             this.ribbonControlAdv_menu = new Syncfusion.Windows.Forms.Tools.RibbonControlAdv();
             this.toolStripTabItem1 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.toolStripEx1 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.tlbtn_TipoBus = new System.Windows.Forms.ToolStripButton();
             this.toolStripTabItem2 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.toolStripEx2 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.tsbtn_Destinos = new System.Windows.Forms.ToolStripButton();
             this.toolStripTabItem3 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.toolStripEx3 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
-            this.tlbtn_TipoBus = new System.Windows.Forms.ToolStripButton();
-            this.tsbtn_Destinos = new System.Windows.Forms.ToolStripButton();
             this.tlbtn_Boleto = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlAdv_menu)).BeginInit();
             this.ribbonControlAdv_menu.SuspendLayout();
@@ -96,7 +96,7 @@ namespace Proyecto_Final.Views
             this.toolStripTabItem1.Panel.TabIndex = 2;
             this.toolStripTabItem1.Panel.Text = "Tipos de bus";
             this.toolStripTabItem1.Position = 0;
-            this.toolStripTabItem1.Size = new System.Drawing.Size(83, 21);
+            this.toolStripTabItem1.Size = new System.Drawing.Size(97, 25);
             this.toolStripTabItem1.Tag = "1";
             this.toolStripTabItem1.Text = "Tipos de bus";
             // 
@@ -117,6 +117,16 @@ namespace Proyecto_Final.Views
             this.toolStripEx1.Size = new System.Drawing.Size(248, 76);
             this.toolStripEx1.TabIndex = 0;
             // 
+            // tlbtn_TipoBus
+            // 
+            this.tlbtn_TipoBus.Image = global::Proyecto_Final.Properties.Resources.autobus;
+            this.tlbtn_TipoBus.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tlbtn_TipoBus.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tlbtn_TipoBus.Name = "tlbtn_TipoBus";
+            this.tlbtn_TipoBus.Size = new System.Drawing.Size(108, 59);
+            this.tlbtn_TipoBus.Text = "Lista de Autobuses";
+            this.tlbtn_TipoBus.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            // 
             // toolStripTabItem2
             // 
             this.toolStripTabItem2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -130,7 +140,7 @@ namespace Proyecto_Final.Views
             this.toolStripTabItem2.Panel.TabIndex = 3;
             this.toolStripTabItem2.Panel.Text = "Destino";
             this.toolStripTabItem2.Position = 1;
-            this.toolStripTabItem2.Size = new System.Drawing.Size(55, 21);
+            this.toolStripTabItem2.Size = new System.Drawing.Size(69, 25);
             this.toolStripTabItem2.Tag = "2";
             this.toolStripTabItem2.Text = "Destino";
             this.toolStripTabItem2.ToolTipText = "Destino";
@@ -152,6 +162,15 @@ namespace Proyecto_Final.Views
             this.toolStripEx2.Size = new System.Drawing.Size(243, 76);
             this.toolStripEx2.TabIndex = 0;
             // 
+            // tsbtn_Destinos
+            // 
+            this.tsbtn_Destinos.Image = global::Proyecto_Final.Properties.Resources.destino__1_;
+            this.tsbtn_Destinos.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtn_Destinos.Name = "tsbtn_Destinos";
+            this.tsbtn_Destinos.Size = new System.Drawing.Size(86, 59);
+            this.tsbtn_Destinos.Text = "Listar Destinos";
+            this.tsbtn_Destinos.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            // 
             // toolStripTabItem3
             // 
             this.toolStripTabItem3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -165,7 +184,7 @@ namespace Proyecto_Final.Views
             this.toolStripTabItem3.Panel.TabIndex = 4;
             this.toolStripTabItem3.Panel.Text = "Boleto";
             this.toolStripTabItem3.Position = 2;
-            this.toolStripTabItem3.Size = new System.Drawing.Size(48, 21);
+            this.toolStripTabItem3.Size = new System.Drawing.Size(62, 25);
             this.toolStripTabItem3.Tag = "3";
             this.toolStripTabItem3.Text = "Boleto";
             // 
@@ -185,25 +204,6 @@ namespace Proyecto_Final.Views
             this.toolStripEx3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.toolStripEx3.Size = new System.Drawing.Size(239, 76);
             this.toolStripEx3.TabIndex = 0;
-            // 
-            // tlbtn_TipoBus
-            // 
-            this.tlbtn_TipoBus.Image = global::Proyecto_Final.Properties.Resources.autobus;
-            this.tlbtn_TipoBus.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tlbtn_TipoBus.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tlbtn_TipoBus.Name = "tlbtn_TipoBus";
-            this.tlbtn_TipoBus.Size = new System.Drawing.Size(108, 59);
-            this.tlbtn_TipoBus.Text = "Lista de Autobuses";
-            this.tlbtn_TipoBus.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            // 
-            // tsbtn_Destinos
-            // 
-            this.tsbtn_Destinos.Image = global::Proyecto_Final.Properties.Resources.destino__1_;
-            this.tsbtn_Destinos.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtn_Destinos.Name = "tsbtn_Destinos";
-            this.tsbtn_Destinos.Size = new System.Drawing.Size(86, 59);
-            this.tsbtn_Destinos.Text = "Listar Destinos";
-            this.tsbtn_Destinos.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             // 
             // tlbtn_Boleto
             // 

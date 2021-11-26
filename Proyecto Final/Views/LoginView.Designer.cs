@@ -71,6 +71,7 @@ namespace Proyecto_Final.Views
             // 
             this.txt_Clave.Location = new System.Drawing.Point(265, 174);
             this.txt_Clave.Name = "txt_Clave";
+            this.txt_Clave.PasswordChar = '*';
             this.txt_Clave.Size = new System.Drawing.Size(141, 20);
             this.txt_Clave.TabIndex = 3;
             // 
