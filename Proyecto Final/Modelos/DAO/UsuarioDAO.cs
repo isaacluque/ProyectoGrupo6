@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,8 +26,8 @@ namespace Proyecto_Final.Modelos.DAO
                 LaConexion.Open();
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = sql.ToString();
-                comando.Parameters.Add("@Correo", SqlDbType.NVarChar, 50).Value = user.Correo;
-                comando.Parameters.Add("@Clave", SqlDbType.NVarChar, 30).Value = user.Clave;
+                comando.Parameters.Add("@Correo", SqlDbType.NChar, 20).Value = user.Correo;
+                comando.Parameters.Add("@Clave", SqlDbType.NChar, 100).Value = user.Clave;
                 v = Convert.ToBoolean(comando.ExecuteScalar());
             }
             catch (Exception)
@@ -36,5 +37,46 @@ namespace Proyecto_Final.Modelos.DAO
             }
             return v;
         }
-    }
+
+        public bool Registrar(Usuario user)
+        {
+            try
+            {
+                StringBuilder sql = new StringBuilder();
+                sql.Append("INSERT INTO USUARIO(Nombre,Correo,Clave) VALUES (@Nombre,@Correo,@Clave); ");
+                //sql.Append("VALUES (@Nombre,@Correo,@Clave); ");
+                //sql.Append("INSERT INTO TIPOBUS(Descripcion,Precio) VALUES (@Descripcion, @Precio);");
+
+                comando.Connection = LaConexion;
+                LaConexion.Open();
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = sql.ToString();
+                comando.Parameters.Add("@Nombre", SqlDbType.NChar, 20).Value = user.Nombre;
+                comando.Parameters.Add("@Correo", SqlDbType.NChar, 20).Value = user.Correo;
+                comando.Parameters.Add("@Clave", SqlDbType.NChar, 100).Value = Encriptar(user.Clave);
+
+                comando.ExecuteNonQuery();
+                LaConexion.Close();
+                return true;
+
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+        }
+
+        public static string Encriptar(string str)
+        {
+            SHA256 sha256 = SHA256Managed.Create();
+            ASCIIEncoding encoding = new ASCIIEncoding();
+            byte[] stream = null;
+            StringBuilder sb = new StringBuilder();
+            stream = sha256.ComputeHash(encoding.GetBytes(str));
+            for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
+            return sb.ToString();
+        }
+
+        }
 }

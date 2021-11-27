@@ -25,5 +25,12 @@ namespace Proyecto_Final.Views
         {
             Application.Exit();
         }
+
+        private void btn_registrarse_Click(object sender, EventArgs e)
+        {
+            Form frm = new UsuarioView();
+            frm.Show();
+            this.Hide();
+        }
     }
 }
