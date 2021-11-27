@@ -41,5 +41,25 @@ namespace Proyecto_Final.Views
 
 
         }
+
+        private void tsbtn_Destinos_Click(object sender, EventArgs e)
+        {
+            if (vistaDestino == null)
+            {
+                vistaDestino = new DestinoView();
+                vistaDestino.MdiParent = this;
+                vistaDestino.FormClosed += Vista_FormClosed;
+                vistaDestino.Show();
+            }
+            else
+            {
+                vistaDestino.Activate();
+            }
+        }
+
+        private void Vista_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            vistaDestino = null;
+        }
     }
 }
