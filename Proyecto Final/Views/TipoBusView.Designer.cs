@@ -29,16 +29,20 @@ namespace Proyecto_Final.Views
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_Descripcion = new System.Windows.Forms.TextBox();
-            this.Txt_Precio = new System.Windows.Forms.TextBox();
             this.btn_listar = new System.Windows.Forms.Button();
             this.btn_Modificar = new System.Windows.Forms.Button();
             this.btn_Eliminar = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.dataGridView_TipoBus = new System.Windows.Forms.DataGridView();
+            this.errorProvider_tipobus = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txt_Descripcion = new System.Windows.Forms.TextBox();
+            this.Txt_Precio = new System.Windows.Forms.TextBox();
+            this.txt_id = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_TipoBus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_tipobus)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -59,27 +63,13 @@ namespace Proyecto_Final.Views
             this.label2.TabIndex = 1;
             this.label2.Text = "Precio";
             // 
-            // txt_Descripcion
-            // 
-            this.txt_Descripcion.Location = new System.Drawing.Point(123, 90);
-            this.txt_Descripcion.Name = "txt_Descripcion";
-            this.txt_Descripcion.Size = new System.Drawing.Size(114, 20);
-            this.txt_Descripcion.TabIndex = 3;
-            // 
-            // Txt_Precio
-            // 
-            this.Txt_Precio.Location = new System.Drawing.Point(433, 90);
-            this.Txt_Precio.Name = "Txt_Precio";
-            this.Txt_Precio.Size = new System.Drawing.Size(126, 20);
-            this.Txt_Precio.TabIndex = 4;
-            // 
             // btn_listar
             // 
             this.btn_listar.Location = new System.Drawing.Point(107, 180);
             this.btn_listar.Name = "btn_listar";
             this.btn_listar.Size = new System.Drawing.Size(113, 23);
             this.btn_listar.TabIndex = 6;
-            this.btn_listar.Text = "Listrar Nuevo Bus";
+            this.btn_listar.Text = "Guardar Bus";
             this.btn_listar.UseVisualStyleBackColor = true;
             // 
             // btn_Modificar
@@ -119,23 +109,51 @@ namespace Proyecto_Final.Views
             this.dataGridView_TipoBus.Size = new System.Drawing.Size(776, 215);
             this.dataGridView_TipoBus.TabIndex = 10;
             // 
+            // errorProvider_tipobus
+            // 
+            this.errorProvider_tipobus.ContainerControl = this;
+            // 
+            // txt_Descripcion
+            // 
+            this.txt_Descripcion.Location = new System.Drawing.Point(123, 94);
+            this.txt_Descripcion.Name = "txt_Descripcion";
+            this.txt_Descripcion.Size = new System.Drawing.Size(139, 20);
+            this.txt_Descripcion.TabIndex = 11;
+            // 
+            // Txt_Precio
+            // 
+            this.Txt_Precio.Location = new System.Drawing.Point(433, 94);
+            this.Txt_Precio.Name = "Txt_Precio";
+            this.Txt_Precio.Size = new System.Drawing.Size(134, 20);
+            this.Txt_Precio.TabIndex = 12;
+            // 
+            // txt_id
+            // 
+            this.txt_id.Location = new System.Drawing.Point(21, 12);
+            this.txt_id.Name = "txt_id";
+            this.txt_id.ReadOnly = true;
+            this.txt_id.Size = new System.Drawing.Size(20, 20);
+            this.txt_id.TabIndex = 13;
+            // 
             // TipoBusView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txt_id);
+            this.Controls.Add(this.Txt_Precio);
+            this.Controls.Add(this.txt_Descripcion);
             this.Controls.Add(this.dataGridView_TipoBus);
             this.Controls.Add(this.btn_Cancelar);
             this.Controls.Add(this.btn_Eliminar);
             this.Controls.Add(this.btn_Modificar);
             this.Controls.Add(this.btn_listar);
-            this.Controls.Add(this.Txt_Precio);
-            this.Controls.Add(this.txt_Descripcion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "TipoBusView";
             this.Text = "TipoBusView";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_TipoBus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_tipobus)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,12 +163,14 @@ namespace Proyecto_Final.Views
 
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label2;
-        public System.Windows.Forms.TextBox txt_Descripcion;
-        public System.Windows.Forms.TextBox Txt_Precio;
         public System.Windows.Forms.Button btn_listar;
         public System.Windows.Forms.Button btn_Modificar;
         public System.Windows.Forms.Button btn_Eliminar;
         public System.Windows.Forms.Button btn_Cancelar;
         public System.Windows.Forms.DataGridView dataGridView_TipoBus;
+        public System.Windows.Forms.ErrorProvider errorProvider_tipobus;
+        public System.Windows.Forms.TextBox Txt_Precio;
+        public System.Windows.Forms.TextBox txt_Descripcion;
+        public System.Windows.Forms.TextBox txt_id;
     }
 }

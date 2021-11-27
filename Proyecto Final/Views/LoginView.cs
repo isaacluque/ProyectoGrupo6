@@ -20,5 +20,10 @@ namespace Proyecto_Final.Views
             LoginController controlador = new LoginController(this);
 
         }
+
+        private void btn_Salir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

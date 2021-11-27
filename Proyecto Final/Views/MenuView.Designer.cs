@@ -73,7 +73,7 @@ namespace Proyecto_Final.Views
             this.ribbonControlAdv_menu.QuickPanelImageLayout = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ribbonControlAdv_menu.RibbonHeaderImage = Syncfusion.Windows.Forms.Tools.RibbonHeaderImage.None;
             this.ribbonControlAdv_menu.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2010;
-            this.ribbonControlAdv_menu.SelectedTab = this.toolStripTabItem1;
+            this.ribbonControlAdv_menu.SelectedTab = this.toolStripTabItem3;
             this.ribbonControlAdv_menu.ShowRibbonDisplayOptionButton = true;
             this.ribbonControlAdv_menu.Size = new System.Drawing.Size(800, 132);
             this.ribbonControlAdv_menu.SystemText.QuickAccessDialogDropDownName = "Start menu";
@@ -126,6 +126,7 @@ namespace Proyecto_Final.Views
             this.tlbtn_TipoBus.Size = new System.Drawing.Size(108, 59);
             this.tlbtn_TipoBus.Text = "Lista de Autobuses";
             this.tlbtn_TipoBus.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.tlbtn_TipoBus.Click += new System.EventHandler(this.tlbtn_TipoBus_Click);
             // 
             // toolStripTabItem2
             // 
@@ -215,14 +216,14 @@ namespace Proyecto_Final.Views
             this.tlbtn_Boleto.Text = "Solicitar Boleto";
             this.tlbtn_Boleto.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             // 
-            // Menu
+            // MenuView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.ribbonControlAdv_menu);
             this.IsMdiContainer = true;
-            this.Name = "Menu";
+            this.Name = "MenuView";
             this.Text = "Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlAdv_menu)).EndInit();

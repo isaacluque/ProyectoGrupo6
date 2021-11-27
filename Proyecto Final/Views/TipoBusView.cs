@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_Final.Controladores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace Proyecto_Final.Views
         public TipoBusView()
         {
             InitializeComponent();
+            TipoBusController controller = new TipoBusController(this);
+        }
+
+        private void btn_refresh_Click(object sender, EventArgs e)
+        {
+            //UpdateForm();
         }
     }
 }

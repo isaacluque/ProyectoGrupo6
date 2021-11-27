@@ -66,6 +66,7 @@ namespace Proyecto_Final.Views
             this.txt_Usuario.Name = "txt_Usuario";
             this.txt_Usuario.Size = new System.Drawing.Size(141, 20);
             this.txt_Usuario.TabIndex = 2;
+            this.txt_Usuario.Text = "rtorres@gmial.com";
             // 
             // txt_Clave
             // 
@@ -74,6 +75,7 @@ namespace Proyecto_Final.Views
             this.txt_Clave.PasswordChar = '*';
             this.txt_Clave.Size = new System.Drawing.Size(141, 20);
             this.txt_Clave.TabIndex = 3;
+            this.txt_Clave.Text = "1234";
             // 
             // btn_Inicio
             // 
@@ -92,6 +94,7 @@ namespace Proyecto_Final.Views
             this.btn_Salir.TabIndex = 5;
             this.btn_Salir.Text = "Salir";
             this.btn_Salir.UseVisualStyleBackColor = true;
+            this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
             // btn_registrarse
             // 
