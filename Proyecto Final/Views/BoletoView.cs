@@ -18,5 +18,10 @@ namespace Proyecto_Final.Views
             InitializeComponent();
             BoletoController controlador = new BoletoController(this);
         }
+
+        private void BoletoView_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

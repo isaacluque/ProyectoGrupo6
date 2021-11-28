@@ -17,5 +17,23 @@ namespace Proyecto_Final.Modelos.DAO
 
         SqlCommand comando = new SqlCommand();
 
+        Conexion conexion = new Conexion();
+
+        //public DataTable cargarcombo()
+        //{
+        //    SqlDataAdapter da = new SqlDataAdapter("SP_CARGARCOMBOBOX", conexion);
+        //    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        //    DataTable dt = new DataTable();
+        //    da.Fill(dt);
+
+
+        //    return dt;
+        //}
+    
     }
+
+
+
+    
+
 }

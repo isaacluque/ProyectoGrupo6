@@ -95,11 +95,11 @@ namespace Proyecto_Final.Controladores
                     DesabilitarControles();
                     LimpiarControles();
                     ListarDestino();
-                    MessageBox.Show("Cliente creado exitosamente");
+                    MessageBox.Show("Destino creado exitosamente");
                 }
                 else
                 {
-                    MessageBox.Show("Cliente creado exitosamente");
+                    MessageBox.Show("No se pudo crear el destino");
                 }
             }
             else if (operacion == "Modificar")

@@ -17,6 +17,7 @@ namespace Proyecto_Final.Controladores
         TipoBusDAO tipoBusDAO = new TipoBusDAO();
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         Usuario user = new Usuario();
+        ComboBoxDAO cargarCombo = new ComboBoxDAO();
 
         public BoletoController(BoletoView view)
         {
@@ -33,11 +34,29 @@ namespace Proyecto_Final.Controladores
         {
             user = usuarioDAO.GetUsuarioPorEmail(System.Threading.Thread.CurrentPrincipal.Identity.Name);
             vista.txt_nombreUsuario.Text = user.Nombre;
+            ListarCategorias();
+            ListarTipos();
         }
 
         private void Guardar(object sender, EventArgs e)
         {
             
         }
+
+        private void ListarCategorias()
+        {
+            vista.cb_Destino.DataSource = cargarCombo.ListarCategorias();
+            vista.cb_Destino.DisplayMember = "Destino";
+            vista.cb_Destino.ValueMember = "IdDestino";
+
+        }
+
+        private void ListarTipos()
+        {
+            vista.cb_TipoBus.DataSource = cargarCombo.ListarTipos();
+            vista.cb_TipoBus.DisplayMember = "Descripcion";
+            vista.cb_TipoBus.ValueMember = "IdTipoBus";
+        }
+
     }
 }
