@@ -55,7 +55,6 @@ namespace Proyecto_Final.Controladores
                     LimpiarControles();
                     MessageBox.Show("Destino eliminado exitosamente");
                     ListarDestino();
-                    operacion = string.Empty;
                 }
                 else MessageBox.Show("Destino no se elimino");
             }

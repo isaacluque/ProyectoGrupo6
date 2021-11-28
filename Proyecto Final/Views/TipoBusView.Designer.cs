@@ -41,6 +41,8 @@ namespace Proyecto_Final.Views
             this.txt_Descripcion = new System.Windows.Forms.TextBox();
             this.Txt_Precio = new System.Windows.Forms.TextBox();
             this.txt_id = new System.Windows.Forms.TextBox();
+            this.btn_nuevo = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_TipoBus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_tipobus)).BeginInit();
             this.SuspendLayout();
@@ -48,7 +50,7 @@ namespace Proyecto_Final.Views
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(120, 55);
+            this.label1.Location = new System.Drawing.Point(246, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 0;
@@ -65,6 +67,7 @@ namespace Proyecto_Final.Views
             // 
             // btn_listar
             // 
+            this.btn_listar.Enabled = false;
             this.btn_listar.Location = new System.Drawing.Point(107, 180);
             this.btn_listar.Name = "btn_listar";
             this.btn_listar.Size = new System.Drawing.Size(113, 23);
@@ -92,6 +95,7 @@ namespace Proyecto_Final.Views
             // 
             // btn_Cancelar
             // 
+            this.btn_Cancelar.Enabled = false;
             this.btn_Cancelar.Location = new System.Drawing.Point(591, 180);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(113, 23);
@@ -115,13 +119,15 @@ namespace Proyecto_Final.Views
             // 
             // txt_Descripcion
             // 
-            this.txt_Descripcion.Location = new System.Drawing.Point(123, 94);
+            this.txt_Descripcion.Enabled = false;
+            this.txt_Descripcion.Location = new System.Drawing.Point(249, 94);
             this.txt_Descripcion.Name = "txt_Descripcion";
             this.txt_Descripcion.Size = new System.Drawing.Size(139, 20);
             this.txt_Descripcion.TabIndex = 11;
             // 
             // Txt_Precio
             // 
+            this.Txt_Precio.Enabled = false;
             this.Txt_Precio.Location = new System.Drawing.Point(433, 94);
             this.Txt_Precio.Name = "Txt_Precio";
             this.Txt_Precio.Size = new System.Drawing.Size(134, 20);
@@ -129,17 +135,37 @@ namespace Proyecto_Final.Views
             // 
             // txt_id
             // 
-            this.txt_id.Location = new System.Drawing.Point(21, 12);
+            this.txt_id.Location = new System.Drawing.Point(72, 97);
             this.txt_id.Name = "txt_id";
             this.txt_id.ReadOnly = true;
-            this.txt_id.Size = new System.Drawing.Size(20, 20);
+            this.txt_id.Size = new System.Drawing.Size(148, 20);
             this.txt_id.TabIndex = 13;
+            // 
+            // btn_nuevo
+            // 
+            this.btn_nuevo.Location = new System.Drawing.Point(617, 94);
+            this.btn_nuevo.Name = "btn_nuevo";
+            this.btn_nuevo.Size = new System.Drawing.Size(113, 23);
+            this.btn_nuevo.TabIndex = 21;
+            this.btn_nuevo.Text = "Nuevo Tipo Bus";
+            this.btn_nuevo.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(69, 55);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(16, 13);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Id";
             // 
             // TipoBusView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btn_nuevo);
             this.Controls.Add(this.txt_id);
             this.Controls.Add(this.Txt_Precio);
             this.Controls.Add(this.txt_Descripcion);
@@ -172,5 +198,7 @@ namespace Proyecto_Final.Views
         public System.Windows.Forms.TextBox Txt_Precio;
         public System.Windows.Forms.TextBox txt_Descripcion;
         public System.Windows.Forms.TextBox txt_id;
+        public System.Windows.Forms.Button btn_nuevo;
+        public System.Windows.Forms.Label label3;
     }
 }

@@ -24,6 +24,7 @@ namespace Proyecto_Final.Controladores
             vista.Load += new EventHandler(Load);
             vista.btn_Eliminar.Click += new EventHandler(Eliminar);
             vista.btn_Cancelar.Click += new EventHandler(Cancelar);
+            vista.btn_nuevo.Click += new EventHandler(Nuevo);
             vista.btn_Modificar.Click += new EventHandler(Modificar);
 
         }
@@ -35,6 +36,8 @@ namespace Proyecto_Final.Controladores
                 bool elimino = tipoBusDAO.EliminarTipo(Convert.ToInt32(vista.dataGridView_TipoBus.CurrentRow.Cells["IdTipoBus"].Value));
                 if (elimino)
                 {
+                    DesabilitarControles();
+                    LimpiarComandos();
                     MessageBox.Show("Elimino Exitosamente");
                     ListarTipos();
                 }
@@ -45,13 +48,13 @@ namespace Proyecto_Final.Controladores
             }
 
         }
-        /*
+        
         private void Nuevo(object sender, EventArgs e)
         {
-            //HabilitarComandos();
+            HabilitarControles();
             operacion = "Nuevo";
         }
-        */
+       
         private void Guardar(object sender, EventArgs e)
         {
             
@@ -69,28 +72,45 @@ namespace Proyecto_Final.Controladores
                 return;
             }
 
+            TipoBusDAO tipoBusDAO = new TipoBusDAO();
+            TipoBus tipoBus = new TipoBus();
+
             tipoBus.Descripcion = vista.txt_Descripcion.Text;
             tipoBus.Precio = Convert.ToDecimal(vista.Txt_Precio.Text);
 
-
-           
+            if (operacion == "Nuevo")
+            {
                 bool inserto = tipoBusDAO.InsertarNuevoTipoBus(tipoBus);
                 if (inserto)
                 {
-
-                    MessageBox.Show("Datos Insertados Exitosamente");
+                    DesabilitarControles();
                     LimpiarComandos();
-                    vista.txt_Descripcion.Clear();
-                    vista.Txt_Precio.Clear();
                     ListarTipos();
-
+                    MessageBox.Show("Datos Insertados Exitosamente");
                 }
                 else
                 {
                     MessageBox.Show("No Inserto");
                 }
+            }
+            else if (operacion == "Modificar")
+            {
+                tipoBus.IdTipoBus = Convert.ToInt32(vista.txt_id.Text);
+                bool modifico = tipoBusDAO.ActualizarTipoBus(tipoBus);
+                if (modifico)
+                {
+                    DesabilitarControles();
+                    LimpiarComandos();
+                    ListarTipos();
+                    MessageBox.Show("Destino modificado exitosamente");
+                }
+                else
+                {
+                    MessageBox.Show("Destino no se modifico");
+                }
+            }
 
-            
+
 
         }
 
@@ -106,34 +126,57 @@ namespace Proyecto_Final.Controladores
 
         private void Cancelar(object sender, EventArgs e)
         {
+            DesabilitarControles();
             LimpiarComandos();
+            tipoBus = null;
         }
 
         private void LimpiarComandos()
         {
+            vista.txt_id.Clear();
             vista.txt_Descripcion.Clear();
             vista.Txt_Precio.Clear();
         }
 
         private void Modificar(object sender, EventArgs e)
         {
+
+            operacion = "Modificar";
             if (vista.dataGridView_TipoBus.SelectedRows.Count > 0)
             {
-                operacion = "Modificar";
-
                 vista.txt_id.Text = vista.dataGridView_TipoBus.CurrentRow.Cells["IdTipoBus"].Value.ToString();
                 vista.txt_Descripcion.Text = vista.dataGridView_TipoBus.CurrentRow.Cells["Descripcion"].Value.ToString();
                 vista.Txt_Precio.Text = vista.dataGridView_TipoBus.CurrentRow.Cells["Precio"].Value.ToString();
 
+                HabilitarControles();
             }
-            else
-            {
-                MessageBox.Show("Debe seleccionar un registro");
-            }
-
-
+            else MessageBox.Show("Debe seleccionar un registro");
         }
 
+        private void HabilitarControles()
+        {
+            vista.txt_Descripcion.Enabled = true;
+            vista.Txt_Precio.Enabled = true;
+
+            vista.btn_listar.Enabled = true;
+            vista.btn_Cancelar.Enabled = true;
+            vista.btn_Modificar.Enabled = false;
+            vista.btn_nuevo.Enabled = false;
+            vista.btn_Eliminar.Enabled = false;
+        }
+
+        private void DesabilitarControles()
+        {
+            vista.txt_Descripcion.Enabled = false;
+            vista.Txt_Precio.Enabled = false;
+
+            vista.btn_listar.Enabled = false;
+            vista.btn_Cancelar.Enabled = false;
+            vista.btn_Modificar.Enabled = true;
+            vista.btn_Eliminar.Enabled = true;
+            vista.btn_nuevo.Enabled = true;
+
+        }
 
     }
 

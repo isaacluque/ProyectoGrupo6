@@ -90,33 +90,35 @@ namespace Proyecto_Final.Modelos.DAO
             return modifico;
         }
 
-        public bool ActualizarCliente(TipoBus tipoBus)
+        public bool ActualizarTipoBus(TipoBus tipoBus)
         {
             bool modifico = false;
             try
             {
                 StringBuilder sql = new StringBuilder();
-                sql.Append(" UPDATE TIPOBUS SET Descripcion = @Descripcion, Precio = @Precio WHERE IdTipoBus = @IdTipoBus;");
-                //sql.Append(" SET Descripcion = @Descripcion, Precio = @Precio ");
-                //sql.Append(" WHERE IdTipoBus = @IdTipoBus; ");
+                sql.Append(" UPDATE TIPOBUS ");
+                sql.Append(" SET Descripcion = @Descripcion, Precio = @Precio ");
+                sql.Append(" WHERE IdTipoBus = @IdTipoBus; ");
 
                 comando.Connection = LaConexion;
                 LaConexion.Open();
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = sql.ToString();
-                comando.Parameters.Add("@Descripcion", SqlDbType.NVarChar, 20).Value = tipoBus.Descripcion;
+                comando.Parameters.Add("@IdTipoBus", SqlDbType.Int).Value = tipoBus.IdTipoBus;
+                comando.Parameters.Add("@Descripcion", SqlDbType.NChar, 20).Value = tipoBus.Descripcion;
                 comando.Parameters.Add("@Precio", SqlDbType.Decimal).Value = tipoBus.Precio;
-
                 comando.ExecuteNonQuery();
                 modifico = true;
                 LaConexion.Close();
-
             }
             catch (Exception ex)
             {
+
                 return modifico;
             }
+
             return modifico;
+
         }
     }
 }
