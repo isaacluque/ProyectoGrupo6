@@ -48,7 +48,7 @@ namespace Proyecto_Final.Views
             {
                 vistaDestino = new DestinoView();
                 vistaDestino.MdiParent = this;
-                vistaDestino.FormClosed += Vista_FormClosed;
+                vistaDestino.FormClosed += Vista_FormClosed2;
                 vistaDestino.Show();
             }
             else
@@ -57,9 +57,29 @@ namespace Proyecto_Final.Views
             }
         }
 
-        private void Vista_FormClosed(object sender, FormClosedEventArgs e)
+        private void Vista_FormClosed2(object sender, FormClosedEventArgs e)
         {
             vistaDestino = null;
+        }
+
+        private void tlbtn_Boleto_Click(object sender, EventArgs e)
+        {
+            if (vistaBoleto == null)
+            {
+                vistaBoleto = new BoletoView();
+                vistaBoleto.MdiParent = this;
+                vistaBoleto.FormClosed += Vista_FormClosed3;
+                vistaBoleto.Show();
+            }
+            else
+            {
+                vistaBoleto.Activate();
+            }
+        }
+
+        private void Vista_FormClosed3(object sender, FormClosedEventArgs e)
+        {
+            vistaBoleto = null;
         }
     }
 }

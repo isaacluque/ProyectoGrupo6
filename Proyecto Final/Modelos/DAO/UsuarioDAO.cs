@@ -13,6 +13,7 @@ namespace Proyecto_Final.Modelos.DAO
     public class UsuarioDAO : Conexion
     {
         SqlCommand comando = new SqlCommand();
+
         public bool ValidarUsuario(Usuario user)
         {
             bool v = false;
@@ -36,6 +37,7 @@ namespace Proyecto_Final.Modelos.DAO
                 throw;
             }
             return v;
+
         }
 
         public bool Registrar(Usuario user)
@@ -44,8 +46,6 @@ namespace Proyecto_Final.Modelos.DAO
             {
                 StringBuilder sql = new StringBuilder();
                 sql.Append("INSERT INTO USUARIO(Nombre,Correo,Clave) VALUES (@Nombre,@Correo,@Clave); ");
-                //sql.Append("VALUES (@Nombre,@Correo,@Clave); ");
-                //sql.Append("INSERT INTO TIPOBUS(Descripcion,Precio) VALUES (@Descripcion, @Precio);");
 
                 comando.Connection = LaConexion;
                 LaConexion.Open();
@@ -67,6 +67,40 @@ namespace Proyecto_Final.Modelos.DAO
 
         }
 
+        public Usuario GetUsuarioPorEmail(string correo)
+        {
+            Usuario user = new Usuario();
+            try
+            {
+                StringBuilder sql = new StringBuilder();
+                sql.Append(" SELECT * FROM USUARIO ");
+                sql.Append(" WHERE Correo = @Correo; ");
+
+                comando.Connection = LaConexion;
+                LaConexion.Open();
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = sql.ToString();
+                comando.Parameters.Add("@Correo", SqlDbType.NChar, 20).Value = correo;
+                SqlDataReader dr = comando.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    user.IdUsuario = (int)dr["IdUsuario"];
+                    user.Nombre = (string)dr["Nombre"];
+                    user.Correo = (string)dr["Correo"];
+                }
+
+                LaConexion.Close();
+
+            }
+            catch (Exception)
+            {
+                LaConexion.Close();
+
+            }
+            return user;
+        }
+
         public static string Encriptar(string str)
         {
             SHA256 sha256 = SHA256Managed.Create();
@@ -78,5 +112,5 @@ namespace Proyecto_Final.Modelos.DAO
             return sb.ToString();
         }
 
-        }
+    }
 }

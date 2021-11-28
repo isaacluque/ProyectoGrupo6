@@ -73,7 +73,7 @@ namespace Proyecto_Final.Views
             this.ribbonControlAdv_menu.QuickPanelImageLayout = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ribbonControlAdv_menu.RibbonHeaderImage = Syncfusion.Windows.Forms.Tools.RibbonHeaderImage.None;
             this.ribbonControlAdv_menu.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2010;
-            this.ribbonControlAdv_menu.SelectedTab = this.toolStripTabItem2;
+            this.ribbonControlAdv_menu.SelectedTab = this.toolStripTabItem3;
             this.ribbonControlAdv_menu.ShowRibbonDisplayOptionButton = true;
             this.ribbonControlAdv_menu.Size = new System.Drawing.Size(800, 132);
             this.ribbonControlAdv_menu.SystemText.QuickAccessDialogDropDownName = "Start menu";
@@ -216,6 +216,7 @@ namespace Proyecto_Final.Views
             this.tlbtn_Boleto.Size = new System.Drawing.Size(88, 59);
             this.tlbtn_Boleto.Text = "Solicitar Boleto";
             this.tlbtn_Boleto.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.tlbtn_Boleto.Click += new System.EventHandler(this.tlbtn_Boleto_Click);
             // 
             // MenuView
             // 

@@ -90,6 +90,9 @@ namespace Proyecto_Final.Controladores
                 MessageBox.Show("Usuario Correcto");
                 MenuView menu = new MenuView();
                 Vista.Hide();
+                System.Security.Principal.GenericIdentity identidad = new System.Security.Principal.GenericIdentity(Vista.txt_Usuario.Text);
+                System.Security.Principal.GenericPrincipal principal = new System.Security.Principal.GenericPrincipal(identidad, null);
+                System.Threading.Thread.CurrentPrincipal = principal;
                 menu.Show();
             }
             else

@@ -58,13 +58,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controladores\BoletoController.cs" />
     <Compile Include="Controladores\DestinoController.cs" />
     <Compile Include="Controladores\LoginController.cs" />
     <Compile Include="Controladores\TipoBusController.cs" />
+    <Compile Include="Modelos\DAO\BoletoDAO.cs" />
     <Compile Include="Modelos\DAO\Conexion.cs" />
     <Compile Include="Modelos\DAO\DestinoDAO.cs" />
     <Compile Include="Modelos\DAO\TipoBusDAO.cs" />
     <Compile Include="Modelos\DAO\UsuarioDAO.cs" />
+    <Compile Include="Modelos\Entidades\Boleto.cs" />
     <Compile Include="Modelos\Entidades\Destino.cs" />
     <Compile Include="Modelos\Entidades\TipoBus.cs" />
     <Compile Include="Modelos\Entidades\Usuario.cs" />

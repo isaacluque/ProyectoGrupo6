@@ -29,9 +29,9 @@ namespace Proyecto_Final.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_Pedir = new System.Windows.Forms.Button();
+            this.btn_guardar = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_nombreUsuario = new System.Windows.Forms.TextBox();
             this.dataGridView_boleto = new System.Windows.Forms.DataGridView();
             this.cb_Destino = new System.Windows.Forms.ComboBox();
             this.cb_TipoBus = new System.Windows.Forms.ComboBox();
@@ -40,33 +40,35 @@ namespace Proyecto_Final.Views
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_PrecioTotal = new System.Windows.Forms.TextBox();
+            this.btn_nuevoBoleto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_boleto)).BeginInit();
             this.SuspendLayout();
             // 
-            // btn_Pedir
+            // btn_guardar
             // 
-            this.btn_Pedir.Location = new System.Drawing.Point(254, 235);
-            this.btn_Pedir.Name = "btn_Pedir";
-            this.btn_Pedir.Size = new System.Drawing.Size(97, 29);
-            this.btn_Pedir.TabIndex = 0;
-            this.btn_Pedir.Text = "Pedir Boleto";
-            this.btn_Pedir.UseVisualStyleBackColor = true;
+            this.btn_guardar.Location = new System.Drawing.Point(295, 237);
+            this.btn_guardar.Name = "btn_guardar";
+            this.btn_guardar.Size = new System.Drawing.Size(97, 29);
+            this.btn_guardar.TabIndex = 0;
+            this.btn_guardar.Text = "Guardar";
+            this.btn_guardar.UseVisualStyleBackColor = true;
             // 
             // btn_Cancelar
             // 
-            this.btn_Cancelar.Location = new System.Drawing.Point(386, 235);
+            this.btn_Cancelar.Location = new System.Drawing.Point(450, 237);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(97, 29);
             this.btn_Cancelar.TabIndex = 1;
             this.btn_Cancelar.Text = "Cancelar";
             this.btn_Cancelar.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txt_nombreUsuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(98, 70);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(138, 20);
-            this.textBox1.TabIndex = 2;
+            this.txt_nombreUsuario.Location = new System.Drawing.Point(98, 70);
+            this.txt_nombreUsuario.Name = "txt_nombreUsuario";
+            this.txt_nombreUsuario.ReadOnly = true;
+            this.txt_nombreUsuario.Size = new System.Drawing.Size(138, 20);
+            this.txt_nombreUsuario.TabIndex = 2;
             // 
             // dataGridView_boleto
             // 
@@ -138,11 +140,21 @@ namespace Proyecto_Final.Views
             this.txt_PrecioTotal.Size = new System.Drawing.Size(143, 20);
             this.txt_PrecioTotal.TabIndex = 10;
             // 
+            // btn_nuevoBoleto
+            // 
+            this.btn_nuevoBoleto.Location = new System.Drawing.Point(139, 237);
+            this.btn_nuevoBoleto.Name = "btn_nuevoBoleto";
+            this.btn_nuevoBoleto.Size = new System.Drawing.Size(97, 29);
+            this.btn_nuevoBoleto.TabIndex = 11;
+            this.btn_nuevoBoleto.Text = "Nuevo boleto";
+            this.btn_nuevoBoleto.UseVisualStyleBackColor = true;
+            // 
             // BoletoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_nuevoBoleto);
             this.Controls.Add(this.txt_PrecioTotal);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -151,9 +163,9 @@ namespace Proyecto_Final.Views
             this.Controls.Add(this.cb_TipoBus);
             this.Controls.Add(this.cb_Destino);
             this.Controls.Add(this.dataGridView_boleto);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_nombreUsuario);
             this.Controls.Add(this.btn_Cancelar);
-            this.Controls.Add(this.btn_Pedir);
+            this.Controls.Add(this.btn_guardar);
             this.Name = "BoletoView";
             this.Text = "BoletoView";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_boleto)).EndInit();
@@ -164,9 +176,9 @@ namespace Proyecto_Final.Views
 
         #endregion
 
-        public System.Windows.Forms.Button btn_Pedir;
+        public System.Windows.Forms.Button btn_guardar;
         public System.Windows.Forms.Button btn_Cancelar;
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox txt_nombreUsuario;
         public System.Windows.Forms.DataGridView dataGridView_boleto;
         public System.Windows.Forms.ComboBox cb_Destino;
         public System.Windows.Forms.ComboBox cb_TipoBus;
@@ -175,5 +187,6 @@ namespace Proyecto_Final.Views
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label label4;
         public System.Windows.Forms.TextBox txt_PrecioTotal;
+        public System.Windows.Forms.Button btn_nuevoBoleto;
     }
 }
