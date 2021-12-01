@@ -12,24 +12,17 @@ namespace Proyecto_Final.Modelos.DAO
     public class Conexion
     {
         protected SqlConnection LaConexion = new SqlConnection(ConfigurationManager.ConnectionStrings["DataBaseConnection"].ConnectionString);
-
-        //static private string Conectar =  LaConexion
-
-        //private SqlConnection Connection = new SqlConnection(LaConexion);
-        //public SqlConnection AbrirConexion()
-        //{
-        //    if (Connection.State == ConnectionState.Closed)
-        //        Connection.Open();
-        //    return Connection;
-        //}
-        //public SqlConnection CerrarConexion()
-        //{
-        //    if (Connection.State == ConnectionState.Open)
-        //        Connection.Close();
-        //    return Connection;
-        //}
-
-
-
+        public SqlConnection AbrirConexion()
+        {
+            if (LaConexion.State == ConnectionState.Closed)
+                LaConexion.Open();
+            return LaConexion;
+        }
+        public SqlConnection CerrarConexion()
+        {
+            if (LaConexion.State == ConnectionState.Open)
+                LaConexion.Close();
+            return LaConexion;
+        }
     }
 }

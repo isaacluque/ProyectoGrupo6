@@ -12,6 +12,7 @@ namespace Proyecto_Final.Modelos.DAO
     public class DestinoDAO : Conexion
     {
         SqlCommand comando = new SqlCommand();
+        private Conexion conectar = new Conexion();
 
         public bool InsertarNuevoDestino(Destino destino)
         {
@@ -22,15 +23,14 @@ namespace Proyecto_Final.Modelos.DAO
                 sql.Append(" INSERT INTO DESTINO ");
                 sql.Append(" VALUES (@Destino, @Precio); ");
 
-                comando.Connection = LaConexion;
-                LaConexion.Open();
+                comando.Connection = conectar.AbrirConexion();
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = sql.ToString();
                 comando.Parameters.Add("@Destino", SqlDbType.NChar, 40).Value = destino.Destinos;
                 comando.Parameters.Add("@Precio", SqlDbType.Decimal).Value = destino.PRECIO;
                 comando.ExecuteNonQuery();
                 inserto = true;
-                LaConexion.Close();
+                conectar.CerrarConexion();
 
             }
             catch (Exception)
@@ -51,8 +51,7 @@ namespace Proyecto_Final.Modelos.DAO
                 sql.Append(" SET Destino = @Destino, Precio = @Precio ");
                 sql.Append(" WHERE IdDestino = @Id; ");
 
-                comando.Connection = LaConexion;
-                LaConexion.Open();
+                comando.Connection = conectar.AbrirConexion();
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = sql.ToString();
                 comando.Parameters.Add("@Id", SqlDbType.Int).Value = destino.ID;
@@ -60,7 +59,7 @@ namespace Proyecto_Final.Modelos.DAO
                 comando.Parameters.Add("@Precio", SqlDbType.Decimal).Value = destino.PRECIO;
                 comando.ExecuteNonQuery();
                 modifico = true;
-                LaConexion.Close();
+                conectar.CerrarConexion();
             }
             catch (Exception ex)
             {
@@ -81,14 +80,13 @@ namespace Proyecto_Final.Modelos.DAO
                 sql.Append(" DELETE FROM DESTINO ");
                 sql.Append(" WHERE IdDestino = @Id; ");
 
-                comando.Connection = LaConexion;
-                LaConexion.Open();
+                comando.Connection = conectar.AbrirConexion();
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = sql.ToString();
                 comando.Parameters.Add("@Id", SqlDbType.Int).Value = id;
                 comando.ExecuteNonQuery();
                 modifico = true;
-                LaConexion.Close();
+                conectar.CerrarConexion();
 
             }
             catch (Exception)
@@ -106,13 +104,12 @@ namespace Proyecto_Final.Modelos.DAO
                 StringBuilder sql = new StringBuilder();
                 sql.Append(" SELECT * FROM DESTINO ");
 
-                comando.Connection = LaConexion;
-                LaConexion.Open();
+                comando.Connection = conectar.AbrirConexion();
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = sql.ToString();
                 SqlDataReader dr = comando.ExecuteReader();
                 dt.Load(dr);
-                LaConexion.Close();
+                conectar.CerrarConexion();
             }
             catch (Exception)
             {

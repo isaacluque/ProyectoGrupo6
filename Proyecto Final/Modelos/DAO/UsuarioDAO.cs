@@ -14,6 +14,8 @@ namespace Proyecto_Final.Modelos.DAO
     {
         SqlCommand comando = new SqlCommand();
 
+        private Conexion conectar = new Conexion();
+
         public bool ValidarUsuario(Usuario user)
         {
             bool v = false;
@@ -23,13 +25,13 @@ namespace Proyecto_Final.Modelos.DAO
                 StringBuilder sql = new StringBuilder();
                 sql.Append("SELECT * FROM USUARIO WHERE Correo=@Correo AND Clave=@Clave");
 
-                comando.Connection = LaConexion;
-                LaConexion.Open();
+                comando.Connection = conectar.AbrirConexion();
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = sql.ToString();
                 comando.Parameters.Add("@Correo", SqlDbType.NChar, 20).Value = user.Correo;
                 comando.Parameters.Add("@Clave", SqlDbType.NChar, 100).Value = user.Clave;
                 v = Convert.ToBoolean(comando.ExecuteScalar());
+                conectar.CerrarConexion();
             }
             catch (Exception)
             {
@@ -47,8 +49,7 @@ namespace Proyecto_Final.Modelos.DAO
                 StringBuilder sql = new StringBuilder();
                 sql.Append("INSERT INTO USUARIO(Nombre,Correo,Clave) VALUES (@Nombre,@Correo,@Clave); ");
 
-                comando.Connection = LaConexion;
-                LaConexion.Open();
+                comando.Connection = conectar.AbrirConexion();
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = sql.ToString();
                 comando.Parameters.Add("@Nombre", SqlDbType.NChar, 20).Value = user.Nombre;
@@ -56,7 +57,7 @@ namespace Proyecto_Final.Modelos.DAO
                 comando.Parameters.Add("@Clave", SqlDbType.NChar, 100).Value = Encriptar(user.Clave);
 
                 comando.ExecuteNonQuery();
-                LaConexion.Close();
+                conectar.CerrarConexion();
                 return true;
 
             }
@@ -76,8 +77,7 @@ namespace Proyecto_Final.Modelos.DAO
                 sql.Append(" SELECT * FROM USUARIO ");
                 sql.Append(" WHERE Correo = @Correo; ");
 
-                comando.Connection = LaConexion;
-                LaConexion.Open();
+                comando.Connection = conectar.AbrirConexion();
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = sql.ToString();
                 comando.Parameters.Add("@Correo", SqlDbType.NChar, 20).Value = correo;
@@ -90,13 +90,12 @@ namespace Proyecto_Final.Modelos.DAO
                     user.Correo = (string)dr["Correo"];
                 }
 
-                LaConexion.Close();
+                conectar.CerrarConexion();
 
             }
             catch (Exception)
             {
-                LaConexion.Close();
-
+                conectar.CerrarConexion();
             }
             return user;
         }

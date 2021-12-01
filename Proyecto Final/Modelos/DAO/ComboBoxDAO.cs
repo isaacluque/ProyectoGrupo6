@@ -8,9 +8,9 @@ using System.Data.SqlClient;
 
 namespace Proyecto_Final.Modelos.DAO
 {
-    public class ComboBoxDAO
+    public class ComboBoxDAO : Conexion
     {
-        private Conexion2 conectar = new Conexion2();
+        private Conexion conectar = new Conexion();
 
         private SqlCommand comando = new SqlCommand();
 
@@ -41,6 +41,5 @@ namespace Proyecto_Final.Modelos.DAO
             conectar.CerrarConexion();
             return Tabla;
         }
-
     }
 }

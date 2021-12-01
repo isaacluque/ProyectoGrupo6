@@ -12,9 +12,10 @@ namespace Proyecto_Final.Modelos.DAO
     public class TipoBusDAO : Conexion
     {
         SqlCommand comando = new SqlCommand();
+        private Conexion conectar = new Conexion();
         public bool InsertarNuevoTipoBus(TipoBus tipoBus)
         {
-           bool inserto = false;
+            bool inserto = false;
             try
             {
                 LaConexion.Close();
@@ -22,8 +23,7 @@ namespace Proyecto_Final.Modelos.DAO
                 sql.Append("INSERT INTO TIPOBUS(Descripcion,Precio) VALUES (@Descripcion, @Precio);");
 
 
-                comando.Connection = LaConexion;
-                LaConexion.Open();
+                comando.Connection = conectar.AbrirConexion();
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = sql.ToString();
 
@@ -33,15 +33,15 @@ namespace Proyecto_Final.Modelos.DAO
                 comando.ExecuteNonQuery();
 
                 inserto = true;
-                LaConexion.Close();
-                
+                conectar.CerrarConexion();
+
 
             }
             catch (Exception ex)
             {
                 inserto = false;
             }
-                return inserto;
+            return inserto;
 
         }
 
@@ -52,13 +52,12 @@ namespace Proyecto_Final.Modelos.DAO
             {
                 StringBuilder sql = new StringBuilder();
                 sql.Append("SELECT * FROM TIPOBUS ");
-                comando.Connection = LaConexion;
-                LaConexion.Open();
+                comando.Connection = conectar.AbrirConexion();
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = sql.ToString();
                 SqlDataReader dr = comando.ExecuteReader();
                 dt.Load(dr);
-                LaConexion.Close();
+                conectar.CerrarConexion();
             }
             catch (Exception)
             {
@@ -73,15 +72,14 @@ namespace Proyecto_Final.Modelos.DAO
             try
             {
                 StringBuilder sql = new StringBuilder();
-                sql.Append("DELETE FROM TIPOBUS WHERE IdTipoBus = @IdTipoBus;" );
-                comando.Connection = LaConexion;
-                LaConexion.Open();
+                sql.Append("DELETE FROM TIPOBUS WHERE IdTipoBus = @IdTipoBus;");
+                comando.Connection = conectar.AbrirConexion();
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = sql.ToString();
                 comando.Parameters.Add("@IdTipoBus", SqlDbType.Int).Value = id;
                 comando.ExecuteNonQuery();
                 modifico = true;
-                LaConexion.Close();
+                conectar.CerrarConexion();
             }
             catch (Exception)
             {
@@ -100,8 +98,7 @@ namespace Proyecto_Final.Modelos.DAO
                 sql.Append(" SET Descripcion = @Descripcion, Precio = @Precio ");
                 sql.Append(" WHERE IdTipoBus = @IdTipoBus; ");
 
-                comando.Connection = LaConexion;
-                LaConexion.Open();
+                comando.Connection = conectar.AbrirConexion();
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = sql.ToString();
                 comando.Parameters.Add("@IdTipoBus", SqlDbType.Int).Value = tipoBus.IdTipoBus;
@@ -109,16 +106,13 @@ namespace Proyecto_Final.Modelos.DAO
                 comando.Parameters.Add("@Precio", SqlDbType.Decimal).Value = tipoBus.Precio;
                 comando.ExecuteNonQuery();
                 modifico = true;
-                LaConexion.Close();
+                conectar.CerrarConexion();
             }
             catch (Exception ex)
             {
-
                 return modifico;
             }
-
             return modifico;
-
         }
     }
 }
