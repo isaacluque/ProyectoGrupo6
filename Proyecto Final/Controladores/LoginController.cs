@@ -19,7 +19,8 @@ namespace Proyecto_Final.Controladores
         public LoginController(LoginView view)
         {
             Vista = view;
-            Vista.btn_Inicio.Click += new EventHandler(ValidarUsuario);
+            //Vista.btn_Inicio.Click += new EventHandler(ValidarUsuario);
+            Vista.btn_IniciarSesion.Click += new EventHandler(ValidarUsuario);
         }
 
         public LoginController(UsuarioView view2)
@@ -81,8 +82,8 @@ namespace Proyecto_Final.Controladores
             UsuarioDAO userDAO = new UsuarioDAO();
             bool V = false;
             Usuario user = new Usuario();
-            user.Correo = Vista.txt_Usuario.Text;
-            user.Clave = Encriptacion(Vista.txt_Clave.Text);
+            user.Correo = Vista.txt_Correo.Texts;
+            user.Clave = Encriptacion(Vista.txt_Contraseña.Texts);
 
             V = userDAO.ValidarUsuario(user);
             if (V)
@@ -90,7 +91,7 @@ namespace Proyecto_Final.Controladores
                 MessageBox.Show("Usuario Correcto");
                 MenuView menu = new MenuView();
                 Vista.Hide();
-                System.Security.Principal.GenericIdentity identidad = new System.Security.Principal.GenericIdentity(Vista.txt_Usuario.Text);
+                System.Security.Principal.GenericIdentity identidad = new System.Security.Principal.GenericIdentity(Vista.txt_Correo.Texts);
                 System.Security.Principal.GenericPrincipal principal = new System.Security.Principal.GenericPrincipal(identidad, null);
                 System.Threading.Thread.CurrentPrincipal = principal;
                 menu.Show();

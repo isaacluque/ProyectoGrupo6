@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace Proyecto_Final.Views
 {
@@ -32,5 +33,51 @@ namespace Proyecto_Final.Views
             frm.Show();
             this.Hide();
         }
+
+        private void btn_Registrar_Click(object sender, EventArgs e)
+        {
+            Form frm = new UsuarioView();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btn_SalirProg_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Está seguro de que quiere cerrar la aplicación?", "Warning",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        //Arrastrar Formulario
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btn_VerContra_MouseUp(object sender, MouseEventArgs e)
+        {
+            txt_Contraseña.PasswordChar = true;
+        }
+
+        private void btn_VerContra_MouseDown(object sender, MouseEventArgs e)
+        {
+            txt_Contraseña.PasswordChar = false;
+        }
+
+
     }
 }
