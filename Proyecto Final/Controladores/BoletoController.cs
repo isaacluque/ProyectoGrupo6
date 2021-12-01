@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Proyecto_Final.Controladores
 {
@@ -83,7 +84,42 @@ namespace Proyecto_Final.Controladores
         }
         private void Guardar(object sender, EventArgs e)
         {
+            if (vista.txt_PrecioTotal.Text == "")
+            {
+                vista.errorProvider1.SetError(vista.txt_PrecioTotal, "Calcular el precio total");
+                vista.txt_PrecioTotal.Focus();
+                return;
+            }
+            if (vista.txt_asiento.Text == "")
+            {
+                vista.errorProvider1.SetError(vista.txt_asiento, "Ingrese un asiento");
+                vista.txt_asiento.Focus();
+                return;
+            }
 
+            BoletoDAO boletoDAO = new BoletoDAO();
+            Boleto boleto = new Boleto();
+
+            boleto.IdUsuario = Convert.ToInt32(vista.txt_idusuario.Text);
+            boleto.IdTipoBus = Convert.ToInt32(vista.txt_idtipobus.Text);
+            boleto.IdDestino = Convert.ToInt32(vista.txt_iddestino.Text);
+            boleto.Asiento = Convert.ToInt32(vista.txt_asiento.Text);
+            boleto.Precio = Convert.ToDecimal(vista.txt_PrecioTotal.Text);
+
+           
+                bool inserto = boletoDAO.InsertarNuevoBoleto(boleto);
+                if (inserto)
+                {
+                    //DesabilitarControles();
+                    //LimpiarControles();
+                    //ListarDestino();
+                    MessageBox.Show("Boleto creado exitosamente");
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo crear el boleto");
+                }
+            
         }
         private void ListarCategorias()
         {

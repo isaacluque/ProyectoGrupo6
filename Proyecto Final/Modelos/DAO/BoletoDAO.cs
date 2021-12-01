@@ -11,13 +11,41 @@ namespace Proyecto_Final.Modelos.DAO
 {
     public class BoletoDAO : Conexion
     {
-        DestinoDAO destinoDAO = new DestinoDAO();
-        TipoBusDAO tipoBusDAO = new TipoBusDAO();
-        UsuarioDAO usuarioDAO = new UsuarioDAO();
-
         SqlCommand comando = new SqlCommand();
 
-        Conexion conexion = new Conexion();
+        Conexion conectar = new Conexion();
+
+        public bool InsertarNuevoBoleto(Boleto boleto)
+        {
+            bool inserto = false;
+            try
+            {
+                StringBuilder sql = new StringBuilder();
+                sql.Append(" INSERT INTO BOLETO ");
+                sql.Append(" VALUES (@IdUsuario, @IdTipoBus, @IdDestino, @Asiento, @Precio); ");
+
+                comando.Connection = conectar.AbrirConexion();
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = sql.ToString();
+                comando.Parameters.Add("@IdUsuario", SqlDbType.Int).Value = boleto.IdUsuario;
+                comando.Parameters.Add("@IdTipoBus", SqlDbType.Int).Value = boleto.IdTipoBus;
+                comando.Parameters.Add("@IdDestino", SqlDbType.Int).Value = boleto.IdDestino;
+                comando.Parameters.Add("@Asiento", SqlDbType.Int).Value = boleto.Asiento;
+                comando.Parameters.Add("@Precio", SqlDbType.Decimal).Value = boleto.Precio;
+                comando.ExecuteNonQuery();
+                inserto = true;
+                conectar.CerrarConexion();
+
+            }
+            catch (Exception)
+            {
+
+                inserto = false;
+            }
+            return inserto;
+        }
+
+
 
         //public DataTable cargarcombo()
         //{
@@ -29,7 +57,7 @@ namespace Proyecto_Final.Modelos.DAO
 
         //    return dt;
         //}
-    
+
     }
 
 

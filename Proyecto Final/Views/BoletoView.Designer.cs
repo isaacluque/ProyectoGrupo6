@@ -29,6 +29,7 @@ namespace Proyecto_Final.Views
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.txt_nombreUsuario = new System.Windows.Forms.TextBox();
@@ -48,7 +49,9 @@ namespace Proyecto_Final.Views
             this.txt_preciotipobus = new System.Windows.Forms.TextBox();
             this.txt_preciodestino = new System.Windows.Forms.TextBox();
             this.btn_calcular = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_boleto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_guardar
@@ -216,6 +219,10 @@ namespace Proyecto_Final.Views
             this.btn_calcular.Text = "Calcular";
             this.btn_calcular.UseVisualStyleBackColor = true;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // BoletoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,6 +251,7 @@ namespace Proyecto_Final.Views
             this.Text = "BoletoView";
             this.Load += new System.EventHandler(this.BoletoView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_boleto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,5 +278,6 @@ namespace Proyecto_Final.Views
         public System.Windows.Forms.TextBox txt_preciotipobus;
         public System.Windows.Forms.TextBox txt_preciodestino;
         public System.Windows.Forms.Button btn_calcular;
+        public System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
