@@ -61,7 +61,7 @@ namespace Proyecto_Final.Modelos.DAO
                 modifico = true;
                 conectar.CerrarConexion();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 return modifico;

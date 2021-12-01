@@ -20,23 +20,40 @@ namespace Proyecto_Final.Controladores
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         Usuario user = new Usuario();
         ComboBoxDAO cargarCombo = new ComboBoxDAO();
-
+        Boleto boleto = new Boleto();
 
         public BoletoController(BoletoView view)
         {
             vista = view;
             vista.btn_guardar.Click += new EventHandler(Guardar);
-            //vista.btn_listarDestino.Click += new EventHandler(Guardar);
+            vista.btn_nuevoBoleto.Click += new EventHandler(Nuevo);
             vista.Load += new EventHandler(Load);
             vista.cb_Destino.SelectedIndexChanged += new EventHandler(Precio);
             vista.cb_TipoBus.SelectedIndexChanged += new EventHandler(Precio);
             vista.btn_calcular.Click += new EventHandler(Precio_Total);
-            //vista.cb_Destino.SelectedIndexChanged += new EventHandler(Precio_Total);
-            //vista.cb_TipoBus.SelectedIndexChanged += new EventHandler(Precio_Total);
+            
 
-            //vista.btn_Modificar.Click += new EventHandler(Modificar);
-            //vista.btn_Eliminar.Click += new EventHandler(Eliminar);
-            //vista.btn_Cancelar.Click += new EventHandler(Cancelar);
+            vista.btn_Cancelar.Click += new EventHandler(Cancelar);
+        }
+
+        private void Nuevo(object sender, EventArgs e)
+        {
+            Habilitar();
+        }
+
+        private void Cancelar(object sender, EventArgs e)
+        {
+
+            LimpiarControles();
+            Desabilitar();
+            vista.errorProvider1.SetError(vista.txt_asiento, null);
+            vista.errorProvider1.SetError(vista.txt_PrecioTotal, null);
+            boleto = null;
+        }
+
+        private void ListarBoleto()
+        {
+            vista.dataGridView_boleto.DataSource = boletoDAO.GetBoleto();
         }
 
         private void Precio(object sender, EventArgs e)
@@ -79,7 +96,7 @@ namespace Proyecto_Final.Controladores
             vista.txt_idusuario.Text = Convert.ToString(user.IdUsuario);
             ListarCategorias();
             ListarTipos();
-
+            ListarBoleto();
 
         }
         private void Guardar(object sender, EventArgs e)
@@ -90,12 +107,15 @@ namespace Proyecto_Final.Controladores
                 vista.txt_PrecioTotal.Focus();
                 return;
             }
+            else vista.errorProvider1.SetError(vista.txt_PrecioTotal, null);            
             if (vista.txt_asiento.Text == "")
             {
+                
                 vista.errorProvider1.SetError(vista.txt_asiento, "Ingrese un asiento");
                 vista.txt_asiento.Focus();
                 return;
             }
+            else vista.errorProvider1.SetError(vista.txt_asiento, null);            
 
             BoletoDAO boletoDAO = new BoletoDAO();
             Boleto boleto = new Boleto();
@@ -110,9 +130,9 @@ namespace Proyecto_Final.Controladores
                 bool inserto = boletoDAO.InsertarNuevoBoleto(boleto);
                 if (inserto)
                 {
-                    //DesabilitarControles();
-                    //LimpiarControles();
-                    //ListarDestino();
+                    Desabilitar();
+                    LimpiarControles();
+                    ListarBoleto();
                     MessageBox.Show("Boleto creado exitosamente");
                 }
                 else
@@ -128,11 +148,34 @@ namespace Proyecto_Final.Controladores
             vista.cb_Destino.ValueMember = "IdDestino";
 
         }
+
+        private void LimpiarControles()
+        {
+            vista.txt_asiento.Clear();
+            vista.txt_PrecioTotal.Clear();
+        }
+
         private void ListarTipos()
         {
             vista.cb_TipoBus.DataSource = cargarCombo.ListarTipos();
             vista.cb_TipoBus.DisplayMember = "Descripcion";
             vista.cb_TipoBus.ValueMember = "IdTipoBus";
+        }
+
+        private void Desabilitar()
+        {
+            vista.btn_guardar.Enabled = false;
+            vista.btn_calcular.Enabled = false;
+            vista.txt_asiento.Enabled = false;
+            vista.btn_Cancelar.Enabled = false;
+        }
+
+        private void Habilitar()
+        {
+            vista.btn_guardar.Enabled = true;
+            vista.btn_calcular.Enabled = true;
+            vista.txt_asiento.Enabled = true;
+            vista.btn_Cancelar.Enabled = true;
         }
 
     }

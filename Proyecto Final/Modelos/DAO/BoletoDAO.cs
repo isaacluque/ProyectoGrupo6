@@ -45,23 +45,27 @@ namespace Proyecto_Final.Modelos.DAO
             return inserto;
         }
 
+        public DataTable GetBoleto()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                StringBuilder sql = new StringBuilder();
+                sql.Append(" SELECT * FROM BOLETO ");
 
-
-        //public DataTable cargarcombo()
-        //{
-        //    SqlDataAdapter da = new SqlDataAdapter("SP_CARGARCOMBOBOX", conexion);
-        //    da.SelectCommand.CommandType = CommandType.StoredProcedure;
-        //    DataTable dt = new DataTable();
-        //    da.Fill(dt);
-
-
-        //    return dt;
-        //}
+                comando.Connection = conectar.AbrirConexion();
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = sql.ToString();
+                SqlDataReader dr = comando.ExecuteReader();
+                dt.Load(dr);
+                conectar.CerrarConexion();
+            }
+            catch (Exception)
+            {
+            }
+            return dt;
+        }
 
     }
-
-
-
-    
 
 }

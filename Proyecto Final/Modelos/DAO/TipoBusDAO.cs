@@ -37,7 +37,7 @@ namespace Proyecto_Final.Modelos.DAO
 
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 inserto = false;
             }
@@ -108,7 +108,7 @@ namespace Proyecto_Final.Modelos.DAO
                 modifico = true;
                 conectar.CerrarConexion();
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 return modifico;
             }

@@ -19,7 +19,7 @@ namespace Proyecto_Final.Views
             BoletoController controlador = new BoletoController(this);
         }
 
-        private void BoletoView_Load(object sender, EventArgs e)
+        private void btn_Cancelar_Click(object sender, EventArgs e)
         {
 
         }
