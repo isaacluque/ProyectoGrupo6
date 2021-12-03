@@ -26,43 +26,50 @@ namespace Proyecto_Final.Controladores
         public LoginController(UsuarioView view2)
         {
             vista2 = view2;
-            vista2.btn_Registrarse.Click += new EventHandler(Registrar);
+            //vista2.btn_Registrarse.Click += new EventHandler(Registrar);
+            vista2.btn_Registrar2.Click += new EventHandler(Registrar);
         }
 
         private void Registrar(object sender, EventArgs e)
         {
-            if (vista2.txt_nombre.Text == "")
+            if (vista2.txt_NombreU.Texts == "")
             {
-                vista2.errorProvider1.SetError(vista2.txt_nombre, "Ingrese su nombre");
-                vista2.txt_nombre.Focus();
+                vista2.errorProvider1.SetError(vista2.txt_NombreU, "Ingrese su nombre");
+                vista2.txt_NombreU.Focus();
                 return;
             }
-            if (vista2.txt_correo.Text == "")
+            if (vista2.txt_Correo2.Texts == "")
             {
-                vista2.errorProvider1.SetError(vista2.txt_correo, "Ingrese su correo");
-                vista2.txt_correo.Focus();
+                vista2.errorProvider1.SetError(vista2.txt_Correo2, "Ingrese su correo");
+                vista2.txt_Correo2.Focus();
                 return;
             }
-            if (vista2.txt_clave.Text == "")
+            if (vista2.txt_Contraseña2.Texts == "")
             {
-                vista2.errorProvider1.SetError(vista2.txt_clave, "Ingrese su contraseña");
-                vista2.txt_clave.Focus();
+                vista2.errorProvider1.SetError(vista2.txt_Contraseña2, "Ingrese su contraseña");
+                vista2.txt_Contraseña2.Focus();
                 return;
             }
 
             UsuarioDAO usuarioDao = new UsuarioDAO();
             Usuario usuario = new Usuario();
 
-            usuario.Nombre = vista2.txt_nombre.Text;
-            usuario.Correo = vista2.txt_correo.Text;
-            usuario.Clave = vista2.txt_clave.Text;
+            //usuario.Nombre = vista2.txt_nombre.Text;
+            //usuario.Correo = vista2.txt_correo.Text;
+            //usuario.Clave = vista2.txt_clave.Text;
+            usuario.Nombre = vista2.txt_NombreU.Texts;
+            usuario.Correo = vista2.txt_Correo2.Texts;
+            usuario.Clave = vista2.txt_Contraseña2.Texts;
 
             bool insertar = usuarioDao.Registrar(usuario);
 
             if (insertar)
             {
+                MenuView menu = new MenuView();
                 limpiar();
                 MessageBox.Show("Se Registro Existosamente", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                menu.Show();
+                vista2.Hide();
             }
             else
             {
@@ -72,9 +79,12 @@ namespace Proyecto_Final.Controladores
 
         private void limpiar()
         {
-            vista2.txt_nombre.Clear();
-            vista2.txt_correo.Clear();
-            vista2.txt_clave.Clear();
+            //vista2.txt_nombre.Clear();
+            vista2.txt_NombreU.Clear();
+            //vista2.txt_correo.Clear();
+            vista2.txt_Correo2.Clear();
+            //vista2.txt_clave.Clear();
+            vista2.txt_Contraseña2.Clear();
         }
 
         public void ValidarUsuario(Object seder, EventArgs e)

@@ -118,23 +118,14 @@ namespace Proyecto_Final.Views
             }
         }
 
-        private void btn_Maximizar_Click(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Normal)
-            {
-                formSize = this.ClientSize;
-                this.WindowState = FormWindowState.Maximized;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Normal;
-                this.Size = formSize;
-            }
-        }
-
         private void btn_Minimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void toolStripTabItem4_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new Inicio());
         }
     }
 }

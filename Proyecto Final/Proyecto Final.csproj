@@ -38,6 +38,7 @@
     </Reference>
     <Reference Include="Syncfusion.Grid.Base, Version=19.3460.0.43, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Grid.Windows, Version=19.3460.0.43, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Licensing, Version=19.3460.0.53, Culture=neutral, PublicKeyToken=632609b4d040f6b4" />
     <Reference Include="Syncfusion.Shared.Base, Version=19.3460.0.43, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Shared.Windows, Version=19.3460.0.43, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.SpellChecker.Base, Version=19.3460.0.43, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
@@ -58,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adicionales\ValidarTextBoxs.cs" />
     <Compile Include="Controladores\BoletoController.cs" />
     <Compile Include="Controladores\DestinoController.cs" />
     <Compile Include="Controladores\LoginController.cs" />
@@ -160,6 +162,34 @@
     <EmbeddedResource Include="Views\UsuarioView.resx">
       <DependentUpon>UsuarioView.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Adicionales\Fuentes\Geomanist-Black.otf" />
+    <None Include="Adicionales\Fuentes\Geomanist-Bold.otf" />
+    <None Include="Adicionales\Fuentes\Geomanist-Book.otf" />
+    <None Include="Adicionales\Fuentes\Geomanist-ExtraLight.otf" />
+    <None Include="Adicionales\Fuentes\Geomanist-Light.otf" />
+    <None Include="Adicionales\Fuentes\Geomanist-Medium.otf" />
+    <None Include="Adicionales\Fuentes\Geomanist-Regular-Italic.otf" />
+    <None Include="Adicionales\Fuentes\Geomanist-Regular.otf" />
+    <None Include="Adicionales\Fuentes\Geomanist-Thin.otf" />
+    <None Include="Adicionales\Fuentes\Geomanist-Ultra.otf" />
+    <None Include="Adicionales\Fuentes\Poppins-Black.ttf" />
+    <None Include="Adicionales\Fuentes\Poppins-BlackItalic.ttf" />
+    <None Include="Adicionales\Fuentes\Poppins-Bold.ttf" />
+    <None Include="Adicionales\Fuentes\Poppins-BoldItalic.ttf" />
+    <None Include="Adicionales\Fuentes\Poppins-ExtraBold.ttf" />
+    <None Include="Adicionales\Fuentes\Poppins-ExtraBoldItalic.ttf" />
+    <None Include="Adicionales\Fuentes\Poppins-ExtraLight.ttf" />
+    <None Include="Adicionales\Fuentes\Poppins-ExtraLightItalic.ttf" />
+    <None Include="Adicionales\Fuentes\Poppins-Italic.ttf" />
+    <None Include="Adicionales\Fuentes\Poppins-Light.ttf" />
+    <None Include="Adicionales\Fuentes\Poppins-LightItalic.ttf" />
+    <None Include="Adicionales\Fuentes\Poppins-Medium.ttf" />
+    <None Include="Adicionales\Fuentes\Poppins-MediumItalic.ttf" />
+    <None Include="Adicionales\Fuentes\Poppins-Regular.ttf" />
+    <None Include="Adicionales\Fuentes\Poppins-SemiBold.ttf" />
+    <None Include="Adicionales\Fuentes\Poppins-SemiBoldItalic.ttf" />
+    <None Include="Adicionales\Fuentes\Poppins-Thin.ttf" />
+    <None Include="Adicionales\Fuentes\Poppins-ThinItalic.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -232,6 +262,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Ill1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\address-book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\errorprov.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\p4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\p5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\p6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\p7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\p8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconoP.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
