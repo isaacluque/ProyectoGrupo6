@@ -44,6 +44,7 @@ namespace Proyecto_Final.Views
             this.txt_Contraseña = new Proyecto_Final.Controles_Personalizados.TextBoxPersonalizado();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -269,12 +270,24 @@ namespace Proyecto_Final.Views
             this.label1.TabIndex = 20;
             this.label1.Text = "DESARROLLADO POR GRUPO N°6";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Poppins ExtraLight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(636, 703);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 36);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "2021";
+            // 
             // LoginView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.ClientSize = new System.Drawing.Size(1327, 748);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox5);
@@ -312,5 +325,6 @@ namespace Proyecto_Final.Views
         public Controles_Personalizados.TextBoxPersonalizado txt_Correo;
         public Controles_Personalizados.TextBoxPersonalizado txt_Contraseña;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
