@@ -44,8 +44,9 @@ namespace Proyecto_Final.Views
             this.btn_NuevoBus = new Proyecto_Final.Controles_Personalizados.BotonPersonalizado();
             this.txt_PrecioB = new Proyecto_Final.Controles_Personalizados.TextBoxPersonalizado();
             this.txt_DescripcionB = new Proyecto_Final.Controles_Personalizados.TextBoxPersonalizado();
-            this.txt_IdB = new Proyecto_Final.Controles_Personalizados.TextBoxPersonalizado();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txt_IdB = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_TipoBus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_tipobus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -62,7 +63,7 @@ namespace Proyecto_Final.Views
             this.dataGridView_TipoBus.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(161)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Geomanist Book", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(242)))), ((int)(((byte)(237)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(255)))), ((int)(((byte)(205)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(63)))), ((int)(((byte)(33)))));
@@ -72,7 +73,7 @@ namespace Proyecto_Final.Views
             this.dataGridView_TipoBus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Geomanist Book", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -86,7 +87,7 @@ namespace Proyecto_Final.Views
             this.dataGridView_TipoBus.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Geomanist Book", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(161)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(255)))), ((int)(((byte)(205)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(83)))), ((int)(((byte)(35)))));
@@ -94,7 +95,7 @@ namespace Proyecto_Final.Views
             this.dataGridView_TipoBus.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView_TipoBus.RowHeadersWidth = 62;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Geomanist Book", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(161)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(255)))), ((int)(((byte)(205)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(83)))), ((int)(((byte)(35)))));
@@ -115,9 +116,10 @@ namespace Proyecto_Final.Views
             this.btn_CancelarOp.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(83)))), ((int)(((byte)(35)))));
             this.btn_CancelarOp.BorderRadius = 17;
             this.btn_CancelarOp.BorderSize = 0;
+            this.btn_CancelarOp.Enabled = false;
             this.btn_CancelarOp.FlatAppearance.BorderSize = 0;
             this.btn_CancelarOp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_CancelarOp.Font = new System.Drawing.Font("Geomanist Book", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CancelarOp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CancelarOp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(242)))), ((int)(((byte)(237)))));
             this.btn_CancelarOp.Location = new System.Drawing.Point(869, 215);
             this.btn_CancelarOp.Name = "btn_CancelarOp";
@@ -137,7 +139,7 @@ namespace Proyecto_Final.Views
             this.btn_EliminarReg.BorderSize = 0;
             this.btn_EliminarReg.FlatAppearance.BorderSize = 0;
             this.btn_EliminarReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_EliminarReg.Font = new System.Drawing.Font("Geomanist Book", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_EliminarReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_EliminarReg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(242)))), ((int)(((byte)(237)))));
             this.btn_EliminarReg.Location = new System.Drawing.Point(629, 215);
             this.btn_EliminarReg.Name = "btn_EliminarReg";
@@ -157,7 +159,7 @@ namespace Proyecto_Final.Views
             this.btn_ModificarReg.BorderSize = 0;
             this.btn_ModificarReg.FlatAppearance.BorderSize = 0;
             this.btn_ModificarReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ModificarReg.Font = new System.Drawing.Font("Geomanist Book", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ModificarReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ModificarReg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(242)))), ((int)(((byte)(237)))));
             this.btn_ModificarReg.Location = new System.Drawing.Point(389, 215);
             this.btn_ModificarReg.Name = "btn_ModificarReg";
@@ -175,9 +177,10 @@ namespace Proyecto_Final.Views
             this.btn_GuardarBus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(83)))), ((int)(((byte)(35)))));
             this.btn_GuardarBus.BorderRadius = 17;
             this.btn_GuardarBus.BorderSize = 0;
+            this.btn_GuardarBus.Enabled = false;
             this.btn_GuardarBus.FlatAppearance.BorderSize = 0;
             this.btn_GuardarBus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_GuardarBus.Font = new System.Drawing.Font("Geomanist Book", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_GuardarBus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_GuardarBus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(242)))), ((int)(((byte)(237)))));
             this.btn_GuardarBus.Location = new System.Drawing.Point(148, 215);
             this.btn_GuardarBus.Name = "btn_GuardarBus";
@@ -197,7 +200,7 @@ namespace Proyecto_Final.Views
             this.btn_NuevoBus.BorderSize = 0;
             this.btn_NuevoBus.FlatAppearance.BorderSize = 0;
             this.btn_NuevoBus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_NuevoBus.Font = new System.Drawing.Font("Geomanist Book", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_NuevoBus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_NuevoBus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(242)))), ((int)(((byte)(237)))));
             this.btn_NuevoBus.Location = new System.Drawing.Point(965, 60);
             this.btn_NuevoBus.Name = "btn_NuevoBus";
@@ -215,7 +218,7 @@ namespace Proyecto_Final.Views
             this.txt_PrecioB.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(161)))), ((int)(((byte)(17)))));
             this.txt_PrecioB.BorderRadius = 0;
             this.txt_PrecioB.BorderSize = 2;
-            this.txt_PrecioB.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_PrecioB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_PrecioB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(242)))), ((int)(((byte)(237)))));
             this.txt_PrecioB.Location = new System.Drawing.Point(709, 64);
             this.txt_PrecioB.Margin = new System.Windows.Forms.Padding(4);
@@ -225,7 +228,7 @@ namespace Proyecto_Final.Views
             this.txt_PrecioB.PasswordChar = false;
             this.txt_PrecioB.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(242)))), ((int)(((byte)(237)))));
             this.txt_PrecioB.PlaceholderText = "Ingrese el Precio";
-            this.txt_PrecioB.Size = new System.Drawing.Size(199, 51);
+            this.txt_PrecioB.Size = new System.Drawing.Size(199, 32);
             this.txt_PrecioB.TabIndex = 25;
             this.txt_PrecioB.Texts = "";
             this.txt_PrecioB.UnderlinedStyle = true;
@@ -238,7 +241,7 @@ namespace Proyecto_Final.Views
             this.txt_DescripcionB.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(161)))), ((int)(((byte)(17)))));
             this.txt_DescripcionB.BorderRadius = 0;
             this.txt_DescripcionB.BorderSize = 2;
-            this.txt_DescripcionB.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_DescripcionB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_DescripcionB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(242)))), ((int)(((byte)(237)))));
             this.txt_DescripcionB.Location = new System.Drawing.Point(354, 64);
             this.txt_DescripcionB.Margin = new System.Windows.Forms.Padding(4);
@@ -248,35 +251,14 @@ namespace Proyecto_Final.Views
             this.txt_DescripcionB.PasswordChar = false;
             this.txt_DescripcionB.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(242)))), ((int)(((byte)(237)))));
             this.txt_DescripcionB.PlaceholderText = "Ingrese la Descripción";
-            this.txt_DescripcionB.Size = new System.Drawing.Size(257, 51);
+            this.txt_DescripcionB.Size = new System.Drawing.Size(257, 32);
             this.txt_DescripcionB.TabIndex = 24;
             this.txt_DescripcionB.Texts = "";
             this.txt_DescripcionB.UnderlinedStyle = true;
             // 
-            // txt_IdB
-            // 
-            this.txt_IdB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.txt_IdB.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(83)))), ((int)(((byte)(35)))));
-            this.txt_IdB.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(161)))), ((int)(((byte)(17)))));
-            this.txt_IdB.BorderRadius = 0;
-            this.txt_IdB.BorderSize = 2;
-            this.txt_IdB.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_IdB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(242)))), ((int)(((byte)(237)))));
-            this.txt_IdB.Location = new System.Drawing.Point(37, 64);
-            this.txt_IdB.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_IdB.Multiline = false;
-            this.txt_IdB.Name = "txt_IdB";
-            this.txt_IdB.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_IdB.PasswordChar = false;
-            this.txt_IdB.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(242)))), ((int)(((byte)(237)))));
-            this.txt_IdB.PlaceholderText = "Aquí Aparecerá el Id";
-            this.txt_IdB.Size = new System.Drawing.Size(220, 51);
-            this.txt_IdB.TabIndex = 23;
-            this.txt_IdB.Texts = "";
-            this.txt_IdB.UnderlinedStyle = true;
-            // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::Proyecto_Final.Properties.Resources.p7;
             this.pictureBox1.Location = new System.Drawing.Point(965, 354);
             this.pictureBox1.Name = "pictureBox1";
@@ -285,11 +267,37 @@ namespace Proyecto_Final.Views
             this.pictureBox1.TabIndex = 43;
             this.pictureBox1.TabStop = false;
             // 
+            // txt_IdB
+            // 
+            this.txt_IdB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.txt_IdB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_IdB.Enabled = false;
+            this.txt_IdB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txt_IdB.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_IdB.Location = new System.Drawing.Point(45, 70);
+            this.txt_IdB.Name = "txt_IdB";
+            this.txt_IdB.Size = new System.Drawing.Size(212, 16);
+            this.txt_IdB.TabIndex = 47;
+            this.txt_IdB.Text = "Aquí Aparecerá el Id";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(83)))), ((int)(((byte)(35)))));
+            this.label1.Location = new System.Drawing.Point(32, 91);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(223, 13);
+            this.label1.TabIndex = 46;
+            this.label1.Text = "¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯";
+            // 
             // TipoBusView
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.ClientSize = new System.Drawing.Size(1200, 523);
+            this.Controls.Add(this.txt_IdB);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_CancelarOp);
             this.Controls.Add(this.btn_EliminarReg);
@@ -298,7 +306,6 @@ namespace Proyecto_Final.Views
             this.Controls.Add(this.btn_NuevoBus);
             this.Controls.Add(this.txt_PrecioB);
             this.Controls.Add(this.txt_DescripcionB);
-            this.Controls.Add(this.txt_IdB);
             this.Controls.Add(this.dataGridView_TipoBus);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -308,13 +315,13 @@ namespace Proyecto_Final.Views
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_tipobus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         public System.Windows.Forms.DataGridView dataGridView_TipoBus;
         public System.Windows.Forms.ErrorProvider errorProvider_tipobus;
-        public Controles_Personalizados.TextBoxPersonalizado txt_IdB;
         public Controles_Personalizados.TextBoxPersonalizado txt_PrecioB;
         public Controles_Personalizados.TextBoxPersonalizado txt_DescripcionB;
         public Controles_Personalizados.BotonPersonalizado btn_NuevoBus;
@@ -323,5 +330,7 @@ namespace Proyecto_Final.Views
         public Controles_Personalizados.BotonPersonalizado btn_ModificarReg;
         public Controles_Personalizados.BotonPersonalizado btn_GuardarBus;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.TextBox txt_IdB;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -19,14 +19,12 @@ namespace Proyecto_Final.Controladores
         public LoginController(LoginView view)
         {
             Vista = view;
-            //Vista.btn_Inicio.Click += new EventHandler(ValidarUsuario);
             Vista.btn_IniciarSesion.Click += new EventHandler(ValidarUsuario);
         }
 
         public LoginController(UsuarioView view2)
         {
             vista2 = view2;
-            //vista2.btn_Registrarse.Click += new EventHandler(Registrar);
             vista2.btn_Registrar2.Click += new EventHandler(Registrar);
         }
 
@@ -54,9 +52,6 @@ namespace Proyecto_Final.Controladores
             UsuarioDAO usuarioDao = new UsuarioDAO();
             Usuario usuario = new Usuario();
 
-            //usuario.Nombre = vista2.txt_nombre.Text;
-            //usuario.Correo = vista2.txt_correo.Text;
-            //usuario.Clave = vista2.txt_clave.Text;
             usuario.Nombre = vista2.txt_NombreU.Texts;
             usuario.Correo = vista2.txt_Correo2.Texts;
             usuario.Clave = vista2.txt_Contraseña2.Texts;
@@ -65,25 +60,19 @@ namespace Proyecto_Final.Controladores
 
             if (insertar)
             {
-                MenuView menu = new MenuView();
+                LoginView login = new LoginView();
                 limpiar();
                 MessageBox.Show("Se Registro Existosamente", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                menu.Show();
+                login.Show();
                 vista2.Hide();
             }
-            else
-            {
-                MessageBox.Show("No se pudo registrar", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            else MessageBox.Show("No se pudo registrar", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void limpiar()
         {
-            //vista2.txt_nombre.Clear();
             vista2.txt_NombreU.Clear();
-            //vista2.txt_correo.Clear();
             vista2.txt_Correo2.Clear();
-            //vista2.txt_clave.Clear();
             vista2.txt_Contraseña2.Clear();
         }
 
@@ -98,7 +87,6 @@ namespace Proyecto_Final.Controladores
             V = userDAO.ValidarUsuario(user);
             if (V)
             {
-                MessageBox.Show("Usuario Correcto");
                 MenuView menu = new MenuView();
                 Vista.Hide();
                 System.Security.Principal.GenericIdentity identidad = new System.Security.Principal.GenericIdentity(Vista.txt_Correo.Texts);
@@ -106,10 +94,7 @@ namespace Proyecto_Final.Controladores
                 System.Threading.Thread.CurrentPrincipal = principal;
                 menu.Show();
             }
-            else
-            {
-                MessageBox.Show("Usuario Incorrecto");
-            }
+            else MessageBox.Show("Usuario Incorrecto");
         }
 
         public static string Encriptacion(string str)

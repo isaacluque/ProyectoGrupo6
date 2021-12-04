@@ -1,12 +1,9 @@
 ﻿using Proyecto_Final.Modelos.Entidades;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Proyecto_Final.Modelos.DAO
 {
@@ -35,8 +32,6 @@ namespace Proyecto_Final.Modelos.DAO
             }
             catch (Exception)
             {
-
-                throw;
             }
             return v;
 
@@ -55,17 +50,14 @@ namespace Proyecto_Final.Modelos.DAO
                 comando.Parameters.Add("@Nombre", SqlDbType.NChar, 20).Value = user.Nombre;
                 comando.Parameters.Add("@Correo", SqlDbType.NChar, 20).Value = user.Correo;
                 comando.Parameters.Add("@Clave", SqlDbType.NChar, 100).Value = Encriptar(user.Clave);
-
                 comando.ExecuteNonQuery();
                 conectar.CerrarConexion();
                 return true;
-
             }
             catch (Exception)
             {
                 return false;
             }
-
         }
 
         public Usuario GetUsuarioPorEmail(string correo)

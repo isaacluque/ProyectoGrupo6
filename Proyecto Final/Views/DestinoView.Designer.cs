@@ -36,15 +36,16 @@ namespace Proyecto_Final.Views
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DestinoView));
             this.dataGridView_Destino = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_idDestino = new System.Windows.Forms.TextBox();
+            this.txt_DescripcionD = new Proyecto_Final.Controles_Personalizados.TextBoxPersonalizado();
             this.btn_CancelarOp = new Proyecto_Final.Controles_Personalizados.BotonPersonalizado();
             this.btn_EliminarReg = new Proyecto_Final.Controles_Personalizados.BotonPersonalizado();
             this.btn_ModificarReg = new Proyecto_Final.Controles_Personalizados.BotonPersonalizado();
             this.btn_GuardarDestino = new Proyecto_Final.Controles_Personalizados.BotonPersonalizado();
             this.btn_NuevoDest = new Proyecto_Final.Controles_Personalizados.BotonPersonalizado();
             this.txt_PrecioD = new Proyecto_Final.Controles_Personalizados.TextBoxPersonalizado();
-            this.txt_DescripcionD = new Proyecto_Final.Controles_Personalizados.TextBoxPersonalizado();
-            this.txt_IdDes = new Proyecto_Final.Controles_Personalizados.TextBoxPersonalizado();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Destino)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,7 +62,7 @@ namespace Proyecto_Final.Views
             this.dataGridView_Destino.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(161)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Geomanist Book", 10F);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(242)))), ((int)(((byte)(237)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(255)))), ((int)(((byte)(205)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(63)))), ((int)(((byte)(33)))));
@@ -77,7 +78,7 @@ namespace Proyecto_Final.Views
             this.dataGridView_Destino.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Geomanist Book", 10F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(161)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(255)))), ((int)(((byte)(205)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(83)))), ((int)(((byte)(35)))));
@@ -85,7 +86,7 @@ namespace Proyecto_Final.Views
             this.dataGridView_Destino.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_Destino.RowHeadersWidth = 62;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Geomanist Book", 10F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(161)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(255)))), ((int)(((byte)(205)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(83)))), ((int)(((byte)(35)))));
@@ -98,6 +99,64 @@ namespace Proyecto_Final.Views
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::Proyecto_Final.Properties.Resources.p8;
+            this.pictureBox1.Location = new System.Drawing.Point(924, 367);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(275, 155);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 43;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(83)))), ((int)(((byte)(35)))));
+            this.label1.Location = new System.Drawing.Point(36, 93);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(223, 13);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯";
+            // 
+            // txt_idDestino
+            // 
+            this.txt_idDestino.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.txt_idDestino.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_idDestino.Enabled = false;
+            this.txt_idDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txt_idDestino.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_idDestino.Location = new System.Drawing.Point(49, 72);
+            this.txt_idDestino.Name = "txt_idDestino";
+            this.txt_idDestino.Size = new System.Drawing.Size(212, 16);
+            this.txt_idDestino.TabIndex = 45;
+            this.txt_idDestino.Text = "Aquí Aparecerá el Id";
+            // 
+            // txt_DescripcionD
+            // 
+            this.txt_DescripcionD.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_DescripcionD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.txt_DescripcionD.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(83)))), ((int)(((byte)(35)))));
+            this.txt_DescripcionD.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(161)))), ((int)(((byte)(17)))));
+            this.txt_DescripcionD.BorderRadius = 0;
+            this.txt_DescripcionD.BorderSize = 2;
+            this.txt_DescripcionD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_DescripcionD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(242)))), ((int)(((byte)(237)))));
+            this.txt_DescripcionD.Location = new System.Drawing.Point(354, 64);
+            this.txt_DescripcionD.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_DescripcionD.Multiline = false;
+            this.txt_DescripcionD.Name = "txt_DescripcionD";
+            this.txt_DescripcionD.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txt_DescripcionD.PasswordChar = false;
+            this.txt_DescripcionD.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(242)))), ((int)(((byte)(237)))));
+            this.txt_DescripcionD.PlaceholderText = "Ingrese la Descripción";
+            this.txt_DescripcionD.Size = new System.Drawing.Size(257, 32);
+            this.txt_DescripcionD.TabIndex = 50;
+            this.txt_DescripcionD.Texts = "";
+            this.txt_DescripcionD.UnderlinedStyle = true;
+            // 
             // btn_CancelarOp
             // 
             this.btn_CancelarOp.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -106,9 +165,10 @@ namespace Proyecto_Final.Views
             this.btn_CancelarOp.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(83)))), ((int)(((byte)(35)))));
             this.btn_CancelarOp.BorderRadius = 17;
             this.btn_CancelarOp.BorderSize = 0;
+            this.btn_CancelarOp.Enabled = false;
             this.btn_CancelarOp.FlatAppearance.BorderSize = 0;
             this.btn_CancelarOp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_CancelarOp.Font = new System.Drawing.Font("Geomanist Book", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CancelarOp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CancelarOp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(242)))), ((int)(((byte)(237)))));
             this.btn_CancelarOp.Location = new System.Drawing.Point(869, 215);
             this.btn_CancelarOp.Name = "btn_CancelarOp";
@@ -128,7 +188,7 @@ namespace Proyecto_Final.Views
             this.btn_EliminarReg.BorderSize = 0;
             this.btn_EliminarReg.FlatAppearance.BorderSize = 0;
             this.btn_EliminarReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_EliminarReg.Font = new System.Drawing.Font("Geomanist Book", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_EliminarReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_EliminarReg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(242)))), ((int)(((byte)(237)))));
             this.btn_EliminarReg.Location = new System.Drawing.Point(629, 215);
             this.btn_EliminarReg.Name = "btn_EliminarReg";
@@ -148,7 +208,7 @@ namespace Proyecto_Final.Views
             this.btn_ModificarReg.BorderSize = 0;
             this.btn_ModificarReg.FlatAppearance.BorderSize = 0;
             this.btn_ModificarReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ModificarReg.Font = new System.Drawing.Font("Geomanist Book", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ModificarReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ModificarReg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(242)))), ((int)(((byte)(237)))));
             this.btn_ModificarReg.Location = new System.Drawing.Point(389, 215);
             this.btn_ModificarReg.Name = "btn_ModificarReg";
@@ -166,9 +226,10 @@ namespace Proyecto_Final.Views
             this.btn_GuardarDestino.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(83)))), ((int)(((byte)(35)))));
             this.btn_GuardarDestino.BorderRadius = 17;
             this.btn_GuardarDestino.BorderSize = 0;
+            this.btn_GuardarDestino.Enabled = false;
             this.btn_GuardarDestino.FlatAppearance.BorderSize = 0;
             this.btn_GuardarDestino.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_GuardarDestino.Font = new System.Drawing.Font("Geomanist Book", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_GuardarDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_GuardarDestino.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(242)))), ((int)(((byte)(237)))));
             this.btn_GuardarDestino.Location = new System.Drawing.Point(148, 215);
             this.btn_GuardarDestino.Name = "btn_GuardarDestino";
@@ -188,7 +249,7 @@ namespace Proyecto_Final.Views
             this.btn_NuevoDest.BorderSize = 0;
             this.btn_NuevoDest.FlatAppearance.BorderSize = 0;
             this.btn_NuevoDest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_NuevoDest.Font = new System.Drawing.Font("Geomanist Book", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_NuevoDest.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_NuevoDest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(242)))), ((int)(((byte)(237)))));
             this.btn_NuevoDest.Location = new System.Drawing.Point(965, 60);
             this.btn_NuevoDest.Name = "btn_NuevoDest";
@@ -206,7 +267,7 @@ namespace Proyecto_Final.Views
             this.txt_PrecioD.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(161)))), ((int)(((byte)(17)))));
             this.txt_PrecioD.BorderRadius = 0;
             this.txt_PrecioD.BorderSize = 2;
-            this.txt_PrecioD.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_PrecioD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_PrecioD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(242)))), ((int)(((byte)(237)))));
             this.txt_PrecioD.Location = new System.Drawing.Point(709, 64);
             this.txt_PrecioD.Margin = new System.Windows.Forms.Padding(4);
@@ -216,71 +277,19 @@ namespace Proyecto_Final.Views
             this.txt_PrecioD.PasswordChar = false;
             this.txt_PrecioD.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(242)))), ((int)(((byte)(237)))));
             this.txt_PrecioD.PlaceholderText = "Ingrese el Precio";
-            this.txt_PrecioD.Size = new System.Drawing.Size(199, 51);
+            this.txt_PrecioD.Size = new System.Drawing.Size(199, 32);
             this.txt_PrecioD.TabIndex = 28;
             this.txt_PrecioD.Texts = "";
             this.txt_PrecioD.UnderlinedStyle = true;
-            // 
-            // txt_DescripcionD
-            // 
-            this.txt_DescripcionD.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_DescripcionD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.txt_DescripcionD.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(83)))), ((int)(((byte)(35)))));
-            this.txt_DescripcionD.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(161)))), ((int)(((byte)(17)))));
-            this.txt_DescripcionD.BorderRadius = 0;
-            this.txt_DescripcionD.BorderSize = 2;
-            this.txt_DescripcionD.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_DescripcionD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(242)))), ((int)(((byte)(237)))));
-            this.txt_DescripcionD.Location = new System.Drawing.Point(354, 64);
-            this.txt_DescripcionD.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_DescripcionD.Multiline = false;
-            this.txt_DescripcionD.Name = "txt_DescripcionD";
-            this.txt_DescripcionD.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_DescripcionD.PasswordChar = false;
-            this.txt_DescripcionD.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(242)))), ((int)(((byte)(237)))));
-            this.txt_DescripcionD.PlaceholderText = "Ingrese la Descripción";
-            this.txt_DescripcionD.Size = new System.Drawing.Size(257, 51);
-            this.txt_DescripcionD.TabIndex = 27;
-            this.txt_DescripcionD.Texts = "";
-            this.txt_DescripcionD.UnderlinedStyle = true;
-            // 
-            // txt_IdDes
-            // 
-            this.txt_IdDes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.txt_IdDes.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(83)))), ((int)(((byte)(35)))));
-            this.txt_IdDes.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(161)))), ((int)(((byte)(17)))));
-            this.txt_IdDes.BorderRadius = 0;
-            this.txt_IdDes.BorderSize = 2;
-            this.txt_IdDes.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_IdDes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(242)))), ((int)(((byte)(237)))));
-            this.txt_IdDes.Location = new System.Drawing.Point(37, 64);
-            this.txt_IdDes.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_IdDes.Multiline = false;
-            this.txt_IdDes.Name = "txt_IdDes";
-            this.txt_IdDes.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txt_IdDes.PasswordChar = false;
-            this.txt_IdDes.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(242)))), ((int)(((byte)(237)))));
-            this.txt_IdDes.PlaceholderText = "Aquí Aparecerá el Id";
-            this.txt_IdDes.Size = new System.Drawing.Size(220, 51);
-            this.txt_IdDes.TabIndex = 26;
-            this.txt_IdDes.Texts = "";
-            this.txt_IdDes.UnderlinedStyle = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Proyecto_Final.Properties.Resources.p8;
-            this.pictureBox1.Location = new System.Drawing.Point(924, 367);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(275, 155);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 43;
-            this.pictureBox1.TabStop = false;
             // 
             // DestinoView
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.ClientSize = new System.Drawing.Size(1200, 523);
+            this.Controls.Add(this.txt_DescripcionD);
+            this.Controls.Add(this.txt_idDestino);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_CancelarOp);
             this.Controls.Add(this.btn_EliminarReg);
@@ -288,8 +297,6 @@ namespace Proyecto_Final.Views
             this.Controls.Add(this.btn_GuardarDestino);
             this.Controls.Add(this.btn_NuevoDest);
             this.Controls.Add(this.txt_PrecioD);
-            this.Controls.Add(this.txt_DescripcionD);
-            this.Controls.Add(this.txt_IdDes);
             this.Controls.Add(this.dataGridView_Destino);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -300,6 +307,7 @@ namespace Proyecto_Final.Views
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -307,14 +315,15 @@ namespace Proyecto_Final.Views
 
         public System.Windows.Forms.DataGridView dataGridView_Destino;
         public System.Windows.Forms.ErrorProvider errorProvider1;
-        public Controles_Personalizados.TextBoxPersonalizado txt_PrecioD;
-        public Controles_Personalizados.TextBoxPersonalizado txt_DescripcionD;
-        public Controles_Personalizados.TextBoxPersonalizado txt_IdDes;
         public Controles_Personalizados.BotonPersonalizado btn_CancelarOp;
         public Controles_Personalizados.BotonPersonalizado btn_EliminarReg;
         public Controles_Personalizados.BotonPersonalizado btn_ModificarReg;
         public Controles_Personalizados.BotonPersonalizado btn_GuardarDestino;
         public Controles_Personalizados.BotonPersonalizado btn_NuevoDest;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox txt_idDestino;
+        public Controles_Personalizados.TextBoxPersonalizado txt_PrecioD;
+        public Controles_Personalizados.TextBoxPersonalizado txt_DescripcionD;
     }
 }

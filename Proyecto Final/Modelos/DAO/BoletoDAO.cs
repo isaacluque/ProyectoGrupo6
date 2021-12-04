@@ -1,11 +1,8 @@
 ﻿using Proyecto_Final.Modelos.Entidades;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Proyecto_Final.Modelos.DAO
 {
@@ -35,11 +32,9 @@ namespace Proyecto_Final.Modelos.DAO
                 comando.ExecuteNonQuery();
                 inserto = true;
                 conectar.CerrarConexion();
-
             }
             catch (Exception)
             {
-
                 inserto = false;
             }
             return inserto;
@@ -66,6 +61,28 @@ namespace Proyecto_Final.Modelos.DAO
             return dt;
         }
 
-    }
+        public bool EliminarBoleto(int id)
+        {
+            bool elimino = false;
+            try
+            {
+                StringBuilder sql = new StringBuilder();
+                sql.Append(" DELETE FROM BOLETO ");
+                sql.Append(" WHERE IdBoleto = @Id; ");
 
+                comando.Connection = conectar.AbrirConexion();
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = sql.ToString();
+                comando.Parameters.Add("@Id", SqlDbType.Int).Value = id;
+                comando.ExecuteNonQuery();
+                elimino = true;
+                conectar.CerrarConexion();
+            }
+            catch (Exception)
+            {
+                return elimino;
+            }
+            return elimino;
+        }
+    }
 }

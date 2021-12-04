@@ -1,11 +1,8 @@
 ﻿using Proyecto_Final.Modelos.Entidades;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Proyecto_Final.Modelos.DAO
 {
@@ -26,23 +23,17 @@ namespace Proyecto_Final.Modelos.DAO
                 comando.Connection = conectar.AbrirConexion();
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = sql.ToString();
-
                 comando.Parameters.Add("@Descripcion", SqlDbType.NVarChar, 20).Value = tipoBus.Descripcion;
                 comando.Parameters.Add("@Precio", SqlDbType.Decimal).Value = tipoBus.Precio;
-
                 comando.ExecuteNonQuery();
-
                 inserto = true;
                 conectar.CerrarConexion();
-
-
             }
             catch (Exception )
             {
                 inserto = false;
             }
             return inserto;
-
         }
 
         public DataTable GetTipoBus()

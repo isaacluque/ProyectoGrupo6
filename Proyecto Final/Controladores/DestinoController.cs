@@ -21,22 +21,21 @@ namespace Proyecto_Final.Controladores
         public DestinoController(DestinoView view)
         {
             vista = view;
-            //vista.btn_nuevo.Click += new EventHandler(Nuevo);
-            vista.btn_NuevoDest.Click += new EventHandler(Nuevo);
-            //vista.btn_listarDestino.Click += new EventHandler(Guardar);
-            vista.btn_GuardarDestino.Click += new EventHandler(Guardar);
             vista.Load += new EventHandler(Load);
-            //vista.btn_Modificar.Click += new EventHandler(Modificar);
+            vista.btn_GuardarDestino.Click += new EventHandler(Guardar);
+            vista.btn_NuevoDest.Click += new EventHandler(Nuevo);
             vista.btn_ModificarReg.Click += new EventHandler(Modificar);
-            //vista.btn_Eliminar.Click += new EventHandler(Eliminar);
             vista.btn_EliminarReg.Click += new EventHandler(Eliminar);
-            //vista.btn_Cancelar.Click += new EventHandler(Cancelar);
             vista.btn_CancelarOp.Click += new EventHandler(Cancelar);
             vista.txt_PrecioD.KeyPress += new KeyPressEventHandler(ValidarPrecio);
         }
 
+
+
         private void Cancelar(object sender, EventArgs e)
         {
+            vista.errorProvider1.SetError(vista.txt_DescripcionD, null);
+            vista.errorProvider1.SetError(vista.txt_PrecioD, null);
             DesabilitarControles();
             LimpiarControles();
             ReiniciarPlaceHolders();
@@ -47,7 +46,7 @@ namespace Proyecto_Final.Controladores
             ListarDestino();
             vista.txt_DescripcionD.Enabled = false;
             vista.txt_PrecioD.Enabled = false;
-            vista.txt_IdDes.Enabled = false;
+            vista.txt_idDestino.Enabled = false;
         }
 
         private void ListarDestino()
@@ -86,18 +85,19 @@ namespace Proyecto_Final.Controladores
                 vista.txt_DescripcionD.Focus();
                 return;
             }
+            else vista.errorProvider1.SetError(vista.txt_DescripcionD, null);
+
             if (vista.txt_PrecioD.Texts == "")
             {
                 vista.errorProvider1.SetError(vista.txt_PrecioD, "Ingrese un precio");
                 vista.txt_PrecioD.Focus();
                 return;
             }
+            else vista.errorProvider1.SetError(vista.txt_PrecioD, null);
 
             DestinoDAO destDAO = new DestinoDAO();
             Destino dest = new Destino();
 
-            //dest.Destinos = vista.txt_Descripcion.Text;
-            //dest.PRECIO = Convert.ToDecimal(vista.Txt_Precio.Text);
             dest.Destinos = vista.txt_DescripcionD.Texts;
             dest.PRECIO = Convert.ToDecimal(vista.txt_PrecioD.Texts);
 
@@ -109,28 +109,25 @@ namespace Proyecto_Final.Controladores
                     DesabilitarControles();
                     LimpiarControles();
                     ListarDestino();
+                    ReiniciarPlaceHolders();
                     MessageBox.Show("Destino creado exitosamente");
                 }
-                else
-                {
-                    MessageBox.Show("No se pudo crear el destino");
-                }
+                else MessageBox.Show("No se pudo crear el destino");
             }
             else if (operacion == "Modificar")
             {
-                dest.ID = Convert.ToInt32(vista.txt_IdDes.Text);
+                
+                dest.ID = Convert.ToInt32(vista.txt_idDestino.Text);
                 bool modifico = destDAO.ActualizarDestino(dest);
                 if (modifico)
                 {
                     DesabilitarControles();
                     LimpiarControles();
                     ListarDestino();
+                    ReiniciarPlaceHolders();
                     MessageBox.Show("Destino modificado exitosamente");
                 }
-                else
-                {
-                    MessageBox.Show("Destino no se modifico");
-                }
+                else MessageBox.Show("Destino no se modifico");
             }
         }
 
@@ -139,11 +136,10 @@ namespace Proyecto_Final.Controladores
             operacion = "Modificar";
             if (vista.dataGridView_Destino.SelectedRows.Count > 0)
             {
-                //vista.txt_IdD.Text = vista.dataGridView_Destino.CurrentRow.Cells["IdDestino"].Value.ToString();
-                vista.txt_IdDes.Texts = vista.dataGridView_Destino.CurrentRow.Cells["IdDestino"].Value.ToString();
-                //vista.txt_Descripcion.Text = vista.dataGridView_Destino.CurrentRow.Cells["Destino"].Value.ToString();
+                vista.txt_DescripcionD.Texts = string.Empty;
+                vista.txt_PrecioD.Texts = string.Empty;
+                vista.txt_idDestino.Text = vista.dataGridView_Destino.CurrentRow.Cells["IdDestino"].Value.ToString();
                 vista.txt_DescripcionD.Texts = vista.dataGridView_Destino.CurrentRow.Cells["Destino"].Value.ToString();
-                //vista.Txt_Precio.Text = vista.dataGridView_Destino.CurrentRow.Cells["Precio"].Value.ToString();
                 vista.txt_PrecioD.Texts = vista.dataGridView_Destino.CurrentRow.Cells["Precio"].Value.ToString();
 
                 HabilitarControles();
@@ -153,24 +149,13 @@ namespace Proyecto_Final.Controladores
 
         private void LimpiarControles()
         {
-            //vista.txt_IdD.Clear();
-            //vista.txt_Descripcion.Clear();
-            //vista.Txt_Precio.Clear();
-            vista.txt_IdDes.Clear();
+            vista.txt_idDestino.Clear();
             vista.txt_DescripcionD.Clear();
             vista.txt_PrecioD.Clear();
         }
 
         private void HabilitarControles()
         {
-            //vista.txt_Descripcion.Enabled = true;
-            //vista.Txt_Precio.Enabled = true;
-            //vista.btn_listarDestino.Enabled = true;
-            //vista.btn_Cancelar.Enabled = true;
-            //vista.btn_Modificar.Enabled = false;
-            //vista.btn_nuevo.Enabled = false;
-            //vista.btn_Eliminar.Enabled = false;
-
             vista.txt_DescripcionD.Enabled = true;
             vista.txt_PrecioD.Enabled = true;
             vista.btn_GuardarDestino.Enabled = true;
@@ -182,14 +167,6 @@ namespace Proyecto_Final.Controladores
 
         private void DesabilitarControles()
         {
-            //vista.txt_Descripcion.Enabled = false;
-            //vista.Txt_Precio.Enabled = false;
-            //vista.btn_listarDestino.Enabled = false;
-            //vista.btn_Cancelar.Enabled = false;
-            //vista.btn_Modificar.Enabled = true;
-            //vista.btn_Eliminar.Enabled = true;
-            //vista.btn_nuevo.Enabled = true;
-
             vista.txt_DescripcionD.Enabled = false;
             vista.txt_PrecioD.Enabled = false;
             vista.btn_GuardarDestino.Enabled = false;
@@ -197,20 +174,18 @@ namespace Proyecto_Final.Controladores
             vista.btn_ModificarReg.Enabled = true;
             vista.btn_EliminarReg.Enabled = true;
             vista.btn_NuevoDest.Enabled = true;
-
         }
 
         private void ReiniciarPlaceHolders()
         {
-            vista.txt_DescripcionD.PlaceholderText = "Ingrese la Descripción";
-            vista.txt_PrecioD.PlaceholderText = "Ingrese el Precio";
-            vista.txt_IdDes.PlaceholderText = "Aquí Aparecerá el Id";
+            vista.txt_DescripcionD.Texts = "Ingrese la Descripción";
+            vista.txt_PrecioD.Texts = "Ingrese el Precio";
+            vista.txt_idDestino.Text = "Aquí Aparecerá el Id";
         }
 
         private void ValidarPrecio(object sender, KeyPressEventArgs e)
         {
             SoloNumerosEnteros.Comprobar(e);
         }
-
     }
 }

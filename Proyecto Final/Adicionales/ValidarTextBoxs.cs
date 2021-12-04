@@ -21,7 +21,6 @@ namespace Proyecto_Final.Adicionales
                 else
                 {
                     e.Handled = true;
-                    MessageBox.Show("Valor no permitido, sólo debe ingresar números");
                 }
 
             }
@@ -40,7 +39,6 @@ namespace Proyecto_Final.Adicionales
                 else
                 {
                     e.Handled = true;
-                    MessageBox.Show("Valor no permitido, sólo debe ingresar letras");
                 }
 
             }
@@ -54,7 +52,6 @@ namespace Proyecto_Final.Adicionales
                 if (Char.IsLetter(e.KeyChar) || Char.IsControl(e.KeyChar) || Char.IsNumber(e.KeyChar))
                 {
                     e.Handled = true;
-                    MessageBox.Show("Valor no permitido, no se debe escribir en el Combobox");
                 }
             }
 
