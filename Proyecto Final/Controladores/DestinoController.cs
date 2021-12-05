@@ -36,7 +36,7 @@ namespace Proyecto_Final.Controladores
         {
             vista.errorProvider1.SetError(vista.txt_DescripcionD, null);
             vista.errorProvider1.SetError(vista.txt_PrecioD, null);
-            DesabilitarControles();
+            DeshabilitarControles();
             LimpiarControles();
             ReiniciarPlaceHolders();
             dest = null;
@@ -61,7 +61,7 @@ namespace Proyecto_Final.Controladores
                 bool elimino = destDAO.EliminarDestino(Convert.ToInt32(vista.dataGridView_Destino.CurrentRow.Cells["IdDestino"].Value));
                 if (elimino)
                 {
-                    DesabilitarControles();
+                    DeshabilitarControles();
                     LimpiarControles();
                     MessageBox.Show("Destino eliminado exitosamente");
                     ListarDestino();
@@ -106,7 +106,7 @@ namespace Proyecto_Final.Controladores
                 bool inserto = destDAO.InsertarNuevoDestino(dest);
                 if (inserto)
                 {
-                    DesabilitarControles();
+                    DeshabilitarControles();
                     LimpiarControles();
                     ListarDestino();
                     ReiniciarPlaceHolders();
@@ -121,7 +121,7 @@ namespace Proyecto_Final.Controladores
                 bool modifico = destDAO.ActualizarDestino(dest);
                 if (modifico)
                 {
-                    DesabilitarControles();
+                    DeshabilitarControles();
                     LimpiarControles();
                     ListarDestino();
                     ReiniciarPlaceHolders();
@@ -165,7 +165,7 @@ namespace Proyecto_Final.Controladores
             vista.btn_EliminarReg.Enabled = false;
         }
 
-        private void DesabilitarControles()
+        private void DeshabilitarControles()
         {
             vista.txt_DescripcionD.Enabled = false;
             vista.txt_PrecioD.Enabled = false;

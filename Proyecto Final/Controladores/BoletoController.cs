@@ -50,7 +50,7 @@ namespace Proyecto_Final.Controladores
         {
             ReiniciarPlaceHolders();
             LimpiarControles();
-            Desabilitar();
+            Deshabilitar();
             vista.errorProvider1.SetError(vista.txt_NumAsiento, null);
             vista.errorProvider1.SetError(vista.txt_PrecioT, null);
             boleto = null;
@@ -104,8 +104,7 @@ namespace Proyecto_Final.Controladores
             }
             else vista.errorProvider1.SetError(vista.txt_PrecioT, null);
 
-            
-
+           
             decimal precio_total, precio_destino, precio_tipobus;
             precio_destino = Convert.ToDecimal(vista.txt_PrecioDest.Text);
             precio_tipobus = Convert.ToDecimal(vista.txt_PrecioBus.Text);
@@ -113,6 +112,7 @@ namespace Proyecto_Final.Controladores
 
             vista.txt_PrecioT.Text = precio_total.ToString();
             vista.txt_PrecioT.Texts = precio_total.ToString();
+            
         }
 
         private void Load(object sender, EventArgs e)
@@ -120,7 +120,7 @@ namespace Proyecto_Final.Controladores
             ListarCategorias();
             ListarTipos();
             ListarBoleto();
-            Desabilitar();
+            Deshabilitar();
             ReiniciarPlaceHolders();
             user = usuarioDAO.GetUsuarioPorEmail(System.Threading.Thread.CurrentPrincipal.Identity.Name);
             vista.txt_NombreUs.Texts = user.Nombre;
@@ -165,7 +165,7 @@ namespace Proyecto_Final.Controladores
                 if (inserto)
                 {
                     ReiniciarPlaceHolders();
-                    Desabilitar();
+                    Deshabilitar();
                     LimpiarControles();
                     ListarBoleto();
                     MessageBox.Show("Boleto creado exitosamente");
@@ -181,7 +181,7 @@ namespace Proyecto_Final.Controladores
                 bool elimino = boletoDAO.EliminarBoleto(Convert.ToInt32(vista.dataGridView_boleto.CurrentRow.Cells["IdBoleto"].Value));
                 if (elimino)
                 {
-                    Desabilitar();
+                    Deshabilitar();
                     LimpiarControles();
                     MessageBox.Show("Boleto eliminado exitosamente");
                     ListarBoleto();
@@ -215,7 +215,7 @@ namespace Proyecto_Final.Controladores
             vista.cb_TipoBus.ValueMember = "IdTipoBus";
         }
 
-        private void Desabilitar()
+        private void Deshabilitar()
         {
             vista.btn_GuardarBol.Enabled = false;
             vista.btn_CalcularPT.Enabled = false;

@@ -35,7 +35,7 @@ namespace Proyecto_Final.Controladores
         {
             vista.errorProvider_tipobus.SetError(vista.txt_DescripcionB, null);
             vista.errorProvider_tipobus.SetError(vista.txt_PrecioB, null);
-            DesabilitarControles();
+            DeshabilitarControles();
             LimpiarComandos();
             ReiniciarPlaceHolders();
             tipoBus = null;
@@ -61,7 +61,7 @@ namespace Proyecto_Final.Controladores
                 bool elimino = tipoBusDAO.EliminarTipo(Convert.ToInt32(vista.dataGridView_TipoBus.CurrentRow.Cells["IdTipoBus"].Value));
                 if (elimino)
                 {
-                    DesabilitarControles();
+                    DeshabilitarControles();
                     LimpiarComandos();
                     MessageBox.Show("Elimino Exitosamente");
                     ListarTipos();
@@ -107,7 +107,7 @@ namespace Proyecto_Final.Controladores
                 bool inserto = tipoBusDAO.InsertarNuevoTipoBus(tipoBus);
                 if (inserto)
                 {
-                    DesabilitarControles();
+                    DeshabilitarControles();
                     LimpiarComandos();
                     ListarTipos();
                     ReiniciarPlaceHolders();
@@ -121,7 +121,7 @@ namespace Proyecto_Final.Controladores
                 bool modifico = tipoBusDAO.ActualizarTipoBus(tipoBus);
                 if (modifico)
                 {
-                    DesabilitarControles();
+                    DeshabilitarControles();
                     LimpiarComandos();
                     ListarTipos();
                     ReiniciarPlaceHolders();
@@ -148,7 +148,7 @@ namespace Proyecto_Final.Controladores
                 vista.txt_PrecioB.Texts = string.Empty;
                 vista.txt_IdB.Text = vista.dataGridView_TipoBus.CurrentRow.Cells["IdTipoBus"].Value.ToString();
                 vista.txt_DescripcionB.Texts = vista.dataGridView_TipoBus.CurrentRow.Cells["Descripcion"].Value.ToString();
-                vista.txt_PrecioB.Text = vista.dataGridView_TipoBus.CurrentRow.Cells["Precio"].Value.ToString();
+                vista.txt_PrecioB.Texts = vista.dataGridView_TipoBus.CurrentRow.Cells["Precio"].Value.ToString();
 
                 HabilitarControles();
             }
@@ -167,7 +167,7 @@ namespace Proyecto_Final.Controladores
 
         }
 
-        private void DesabilitarControles()
+        private void DeshabilitarControles()
         {
             vista.txt_DescripcionB.Enabled = false;
             vista.txt_PrecioB.Enabled = false;
