@@ -2,11 +2,7 @@
 using Proyecto_Final.Modelos.Entidades;
 using Proyecto_Final.Views;
 using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Proyecto_Final.Adicionales.ValidarTextBoxs;
 
@@ -16,8 +12,6 @@ namespace Proyecto_Final.Controladores
     {
         BoletoView vista;
         BoletoDAO boletoDAO = new BoletoDAO();
-        DestinoDAO destinoDAO = new DestinoDAO();
-        TipoBusDAO tipoBusDAO = new TipoBusDAO();
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         Usuario user = new Usuario();
         ComboBoxDAO cargarCombo = new ComboBoxDAO();
@@ -97,7 +91,7 @@ namespace Proyecto_Final.Controladores
             }
             else vista.errorProvider1.SetError(vista.txt_PrecioT, null);
 
-            if (vista.cb_Destino.Text == "Seleccione el Destino")
+            if (vista.cb_Destino.Text == "Seleccione su Destino")
             {
                 vista.errorProvider1.SetError(vista.txt_PrecioT, "No se puede calcular el total");
                 return;
